@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.1 Probability Spaces and Random Elements | Topics in Mathematical Statistics</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.1 Probability Spaces and Random Elements | Topics in Mathematical Statistics" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.1 Probability Spaces and Random Elements | Topics in Mathematical Statistics" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Huei-Yuan Yao" />
+
+
+<meta name="date" content="2022-09-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="prob.html"/>
+<link rel="next" href="integration-and-differentiation.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Topics in Mathematical Statistics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>2</b> Measure-based Probability theory</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="probability-spaces-and-random-elements.html"><a href="probability-spaces-and-random-elements.html"><i class="fa fa-check"></i><b>2.1</b> Probability Spaces and Random Elements</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="probability-spaces-and-random-elements.html"><a href="probability-spaces-and-random-elements.html#recap-measure-theory"><i class="fa fa-check"></i><b>2.1.1</b> Recap: Measure theory</a></li>
+<li class="chapter" data-level="2.1.2" data-path="probability-spaces-and-random-elements.html"><a href="probability-spaces-and-random-elements.html#measurable-functions"><i class="fa fa-check"></i><b>2.1.2</b> Measurable Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html"><i class="fa fa-check"></i><b>2.2</b> Integration and Differentiation</a></li>
+<li class="chapter" data-level="2.3" data-path="conditional-expectation.html"><a href="conditional-expectation.html"><i class="fa fa-check"></i><b>2.3</b> Conditional Expectation</a></li>
+<li class="chapter" data-level="2.4" data-path="asymptotical-theory.html"><a href="asymptotical-theory.html"><i class="fa fa-check"></i><b>2.4</b> Asymptotical Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="statistical-decision-theory.html"><a href="statistical-decision-theory.html"><i class="fa fa-check"></i><b>3</b> Statistical Decision Theory</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="general-framework.html"><a href="general-framework.html"><i class="fa fa-check"></i><b>3.1</b> General Framework</a></li>
+<li class="chapter" data-level="3.2" data-path="point-estimators.html"><a href="point-estimators.html"><i class="fa fa-check"></i><b>3.2</b> Point Estimators</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="point-estimators.html"><a href="point-estimators.html#umvue"><i class="fa fa-check"></i><b>3.2.1</b> UMVUE</a></li>
+<li class="chapter" data-level="3.2.2" data-path="point-estimators.html"><a href="point-estimators.html#u-statistics"><i class="fa fa-check"></i><b>3.2.2</b> U-Statistics</a></li>
+<li class="chapter" data-level="3.2.3" data-path="point-estimators.html"><a href="point-estimators.html#v-statistics"><i class="fa fa-check"></i><b>3.2.3</b> V-Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html"><i class="fa fa-check"></i><b>3.3</b> Hypothesis Tests</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#ump-tests"><i class="fa fa-check"></i><b>3.3.1</b> UMP Tests</a></li>
+<li class="chapter" data-level="3.3.2" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#tests-in-parametric-models"><i class="fa fa-check"></i><b>3.3.2</b> Tests in Parametric Models</a></li>
+<li class="chapter" data-level="3.3.3" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#tests-in-nonparametric-models"><i class="fa fa-check"></i><b>3.3.3</b> Tests in Nonparametric Models</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="confidence-sets.html"><a href="confidence-sets.html"><i class="fa fa-check"></i><b>3.4</b> Confidence Sets</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="estimation-in-parametric-models.html"><a href="estimation-in-parametric-models.html"><i class="fa fa-check"></i><b>4</b> Estimation in Parametric Models</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="bayes-estimators.html"><a href="bayes-estimators.html"><i class="fa fa-check"></i><b>4.1</b> Bayes Estimators</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="bayes-estimators.html"><a href="bayes-estimators.html#markov-chain-monte-carlo"><i class="fa fa-check"></i><b>4.1.1</b> Markov chain Monte Carlo</a></li>
+<li class="chapter" data-level="4.1.2" data-path="bayes-estimators.html"><a href="bayes-estimators.html#asymptotic-efficiency-of-bayes-estimators"><i class="fa fa-check"></i><b>4.1.2</b> Asymptotic efficiency of Bayes Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="method-of-maximum-likelihood.html"><a href="method-of-maximum-likelihood.html"><i class="fa fa-check"></i><b>4.2</b> Method of Maximum Likelihood</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="method-of-maximum-likelihood.html"><a href="method-of-maximum-likelihood.html#mle"><i class="fa fa-check"></i><b>4.2.1</b> MLE</a></li>
+<li class="chapter" data-level="4.2.2" data-path="method-of-maximum-likelihood.html"><a href="method-of-maximum-likelihood.html#quasi-likelihoods-and-conditional-likelihoods"><i class="fa fa-check"></i><b>4.2.2</b> Quasi-likelihoods and conditional likelihoods</a></li>
+<li class="chapter" data-level="4.2.3" data-path="method-of-maximum-likelihood.html"><a href="method-of-maximum-likelihood.html#asymptotic-efficiency"><i class="fa fa-check"></i><b>4.2.3</b> Asymptotic efficiency</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="math-example.html"><a href="math-example.html"><i class="fa fa-check"></i><b>4.3</b> math example</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="estimation-in-nonparametric-models.html"><a href="estimation-in-nonparametric-models.html"><i class="fa fa-check"></i><b>5</b> Estimation in Nonparametric Models</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="distributional-estimators.html"><a href="distributional-estimators.html"><i class="fa fa-check"></i><b>5.1</b> Distributional Estimators</a></li>
+<li class="chapter" data-level="5.2" data-path="statistical-functionals.html"><a href="statistical-functionals.html"><i class="fa fa-check"></i><b>5.2</b> Statistical Functionals</a></li>
+<li class="chapter" data-level="5.3" data-path="sample-quantiles.html"><a href="sample-quantiles.html"><i class="fa fa-check"></i><b>5.3</b> Sample quantiles</a></li>
+<li class="chapter" data-level="5.4" data-path="generalized-estimating-equations.html"><a href="generalized-estimating-equations.html"><i class="fa fa-check"></i><b>5.4</b> Generalized Estimating Equations</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="generalized-estimating-equations.html"><a href="generalized-estimating-equations.html#framework"><i class="fa fa-check"></i><b>5.4.1</b> Framework</a></li>
+<li class="chapter" data-level="5.4.2" data-path="generalized-estimating-equations.html"><a href="generalized-estimating-equations.html#consistency"><i class="fa fa-check"></i><b>5.4.2</b> Consistency</a></li>
+<li class="chapter" data-level="5.4.3" data-path="generalized-estimating-equations.html"><a href="generalized-estimating-equations.html#asymptotic-normality"><i class="fa fa-check"></i><b>5.4.3</b> Asymptotic normality</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="generalized-methods-of-moments.html"><a href="generalized-methods-of-moments.html"><i class="fa fa-check"></i><b>5.5</b> Generalized Methods of Moments</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Topics in Mathematical Statistics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="probability-spaces-and-random-elements" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Probability Spaces and Random Elements<a href="probability-spaces-and-random-elements.html#probability-spaces-and-random-elements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="recap-measure-theory" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Recap: Measure theory<a href="probability-spaces-and-random-elements.html#recap-measure-theory" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We start from some basic concepts in the classical measure theory and use them to describe the probability space.</p>
+<!-- this is for annotation-->
+<!-- ^[This is a footnote.] -->
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 2.1  (Sigma Algebra (Field)) </strong></span>Let <span class="math inline">\(\cal F\)</span> be a collection of subsets of a sample space <span class="math inline">\(\Omega\)</span>. <span class="math inline">\(\cal F\)</span> is called a sigma algebra on <span class="math inline">\(\Omega\)</span> if</p>
+<ol style="list-style-type: decimal">
+<li>The empty set <span class="math inline">\(\phi \in \cal F\)</span>.</li>
+<li>If <span class="math inline">\(A \in \cal F\)</span>, then <span class="math inline">\(A^c \in \cal F\)</span>.</li>
+<li>If <span class="math inline">\(A_i \in \cal F\)</span> for <span class="math inline">\(i=1,2,\cdots\)</span>, then <span class="math inline">\(\cup_{i=1}^{\infty} A_i \in \cal F\)</span>.</li>
+</ol>
+</div>
+<p>We denote the smallest sigma algebra containing a collection <span class="math inline">\(C\)</span> as <span class="math inline">\(\sigma(C)\)</span>. In particular, we denote <span class="math inline">\(\cal B= \sigma(C)\)</span> the sigma algebra (called <strong>Borel field</strong>) where <span class="math inline">\(C\)</span> denotes all finite open interval on <span class="math inline">\(\mathbb{R}\)</span>. By Linderberg’s covering lemma, we can see <span class="math inline">\(\cal B\)</span> is also the smallest sigma algebra containing the collection of all open sets on <span class="math inline">\(\mathbb{R}\)</span>. Furthermore, we denote <span class="math inline">\(\cal B^k\)</span> as the Borel field in <span class="math inline">\(\mathbb{R}^k\)</span>. Define the pair <span class="math inline">\((\Omega, \cal F)\)</span> a measurable space if <span class="math inline">\(\cal F\)</span> is a sigma algebra on <span class="math inline">\(\Omega\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 2.2  (Measure) </strong></span>A set function <span class="math inline">\(\nu(\cdot)\)</span> defined on <span class="math inline">\(\cal F\)</span> is a measure if</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(0 \leq \nu(A) \leq \infty\)</span> for any <span class="math inline">\(A \in \cal F\)</span>.</li>
+<li><span class="math inline">\(\nu(\phi)=0\)</span></li>
+<li>If <span class="math inline">\(A_i \in \cal F\)</span>, <span class="math inline">\(i=1,2,\cdots\)</span> and <span class="math inline">\(A_i\)</span>’s are disjoint for any <span class="math inline">\(i\neq j\)</span>, then
+<span class="math display">\[\nu(\cup_i A_i)=\sum_i \nu(A_i)\]</span></li>
+</ol>
+</div>
+<p>The triple <span class="math inline">\((\Omega, \cal F, \nu)\)</span> is called a measure space and it is called a probability space if <span class="math inline">\(\nu(\Omega)=1\)</span>.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-3" class="proposition"><strong>Proposition 2.1  </strong></span>Let <span class="math inline">\((\Omega,\cal F,\nu)\)</span> be a measure space.</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline">\(A \subset B\)</span>, then <span class="math inline">\(\nu(A)\leq \nu (B)\)</span>.</li>
+<li>For any sequence <span class="math inline">\(A_1,A_2,\cdots\)</span>, <span class="math display">\[\nu(\cup_i A_i)\leq \sum_i \nu(A_i).\]</span></li>
+<li>If <span class="math inline">\(A_1 \subset A_2 \subset \cdots\)</span> (or <span class="math inline">\(A_1 \supset A_2 \supset \cdots\)</span> and <span class="math inline">\(\nu(A_k)&lt;\infty\)</span> for some <span class="math inline">\(k\in \mathbb{N}\)</span>), then <span class="math display">\[\nu(\lim_{k \to \infty}A_k)=\lim_{k\to \infty}\nu(A_k).\]</span></li>
+</ol>
+</div>
+<p>Below we see some uniqueness theorem about the measure, or the result of the well known Dinkin’s <span class="math inline">\(\pi\)</span>-<span class="math inline">\(\lambda\)</span> theorem.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-4" class="definition"><strong>Definition 2.3  </strong></span>A collection <span class="math inline">\(C\)</span> of some subsets of <span class="math inline">\(\Omega\)</span> is a <span class="math inline">\(\pi\)</span>-system if it is closed under intersection.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-5" class="definition"><strong>Definition 2.4  </strong></span>Let <span class="math inline">\(C\)</span> be a collection of some subsets of <span class="math inline">\(\Omega\)</span>. A measure <span class="math inline">\(\mu\)</span> is <span class="math inline">\(\sigma\)</span>-finite on <span class="math inline">\(C\)</span> if there exist a sequence of sets <span class="math inline">\(\{A_k\}\)</span> in <span class="math inline">\(C\)</span> such that <span class="math inline">\(\Omega=\cup_k A_k\)</span> and <span class="math inline">\(\mu(A_K)&lt;\infty\)</span> for all <span class="math inline">\(k\)</span>.</p>
+</div>
+<p>Lebesgue measure is an example of <span class="math inline">\(\sigma\)</span>-finite measure on <span class="math inline">\(\cal B\)</span>. Since probability measure is always finite, so it is <span class="math inline">\(sigma\)</span>-finite.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-6" class="theorem"><strong>Theorem 2.1  (Theorem 10.3 in Billingsley, 1986) </strong></span>Suppose that <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span> are measures on <span class="math inline">\(\sigma(\cal P)\)</span>, where <span class="math inline">\(\cal P\)</span> is a <span class="math inline">\(\pi\)</span>-system. Suppose they are both <span class="math inline">\(\sigma\)</span>-finite and agree on <span class="math inline">\(\cal P\)</span>, then they also agree on <span class="math inline">\(\sigma(\cal P)\)</span>.</p>
+</div>
+</div>
+<div id="measurable-functions" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Measurable Functions<a href="probability-spaces-and-random-elements.html#measurable-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-7" class="lemma"><strong>Lemma 2.1  (Theorem A.42 in Schervish (1995)) </strong></span>Let <span class="math inline">\(Y\)</span> be measurable from <span class="math inline">\((\Omega,\cal F)\)</span> to <span class="math inline">\((\Lambda_Y,\cal G_Y)\)</span> and <span class="math inline">\(Z\)</span> be measurable from <span class="math inline">\((\Omega,\cal F)\)</span> to <span class="math inline">\((\Lambda_Z,\cal G_Z)\)</span>. Define <span class="math inline">\(T=\{Y(\omega),\omega \in \Omega\} \subset \Lambda_Y\)</span>. Then <span class="math inline">\(Z\)</span> is measurable from <span class="math inline">\((\Omega,\sigma(Y))\)</span> to <span class="math inline">\((\Lambda_Z,\cal G_Z)\)</span> if and only if <span class="math inline">\(Z=h \circ Y\)</span> for some <span class="math inline">\(h\)</span> that is measurable from <span class="math inline">\((T,T\cap \cal G_Y)\)</span> to <span class="math inline">\((\Lambda_Z,\cal G_Z)\)</span>.</p>
+</div>
+<p>Remark: Proof of the “if” side is relatively obvious. (WLOG, we can assume <span class="math inline">\(\Lambda_Y\)</span> is the range of <span class="math inline">\(Y\)</span>.)</p>
+<div class="proof">
+<p><span id="unlabeled-div-8" class="proof"><em>Proof</em> (only if). </span>At first, we show that for <span class="math inline">\(\omega_1,\ \omega_2 \in \Omega\)</span>, <span class="math inline">\(Y(\omega_1)=Y(\omega_2)\)</span> implies <span class="math inline">\(Z(\omega_1)=Z(\omega_2)\)</span>. Suppose that <span class="math inline">\(Y(\omega_1)=Y(\omega_1)=a\)</span>. Since <span class="math inline">\(Z\)</span> is measurable with respect to <span class="math inline">\(\sigma(Y)\)</span>, there exist <span class="math inline">\(A \in \cal G_Y\)</span> such that <span class="math inline">\(Y^{-1}(A) =Z^{-1}(\{Z(\omega_1)\})\)</span>. Clearly <span class="math inline">\(\omega_1,\ \omega_2 \in Z^{-1}(\{Z(\omega_1)\})\)</span>, thus <span class="math inline">\(Z(\omega_1)=Z(\omega_2)\)</span>. By this first step, we can well defined the function <span class="math inline">\(h\)</span> such that <span class="math inline">\(h(Y(\omega))=Z(\omega)\)</span>.</p>
+<p>Secondly, we prove such <span class="math inline">\(h\)</span> is measurable.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="prob.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="integration-and-differentiation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-prob.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

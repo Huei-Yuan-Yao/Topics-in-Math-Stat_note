@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.4 Asymptotical Theory | Topics in Mathematical Statistics</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.4 Asymptotical Theory | Topics in Mathematical Statistics" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.4 Asymptotical Theory | Topics in Mathematical Statistics" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Huei-Yuan Yao" />
+
+
+<meta name="date" content="2022-09-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="conditional-expectation.html"/>
+<link rel="next" href="statistical-decision-theory.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Topics in Mathematical Statistics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>2</b> Measure-based Probability theory</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="probability-spaces-and-random-elements.html"><a href="probability-spaces-and-random-elements.html"><i class="fa fa-check"></i><b>2.1</b> Probability Spaces and Random Elements</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="probability-spaces-and-random-elements.html"><a href="probability-spaces-and-random-elements.html#recap-measure-theory"><i class="fa fa-check"></i><b>2.1.1</b> Recap: Measure theory</a></li>
+<li class="chapter" data-level="2.1.2" data-path="probability-spaces-and-random-elements.html"><a href="probability-spaces-and-random-elements.html#measurable-functions"><i class="fa fa-check"></i><b>2.1.2</b> Measurable Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html"><i class="fa fa-check"></i><b>2.2</b> Integration and Differentiation</a></li>
+<li class="chapter" data-level="2.3" data-path="conditional-expectation.html"><a href="conditional-expectation.html"><i class="fa fa-check"></i><b>2.3</b> Conditional Expectation</a></li>
+<li class="chapter" data-level="2.4" data-path="asymptotical-theory.html"><a href="asymptotical-theory.html"><i class="fa fa-check"></i><b>2.4</b> Asymptotical Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="statistical-decision-theory.html"><a href="statistical-decision-theory.html"><i class="fa fa-check"></i><b>3</b> Statistical Decision Theory</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="general-framework.html"><a href="general-framework.html"><i class="fa fa-check"></i><b>3.1</b> General Framework</a></li>
+<li class="chapter" data-level="3.2" data-path="point-estimators.html"><a href="point-estimators.html"><i class="fa fa-check"></i><b>3.2</b> Point Estimators</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="point-estimators.html"><a href="point-estimators.html#umvue"><i class="fa fa-check"></i><b>3.2.1</b> UMVUE</a></li>
+<li class="chapter" data-level="3.2.2" data-path="point-estimators.html"><a href="point-estimators.html#u-statistics"><i class="fa fa-check"></i><b>3.2.2</b> U-Statistics</a></li>
+<li class="chapter" data-level="3.2.3" data-path="point-estimators.html"><a href="point-estimators.html#v-statistics"><i class="fa fa-check"></i><b>3.2.3</b> V-Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html"><i class="fa fa-check"></i><b>3.3</b> Hypothesis Tests</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#ump-tests"><i class="fa fa-check"></i><b>3.3.1</b> UMP Tests</a></li>
+<li class="chapter" data-level="3.3.2" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#tests-in-parametric-models"><i class="fa fa-check"></i><b>3.3.2</b> Tests in Parametric Models</a></li>
+<li class="chapter" data-level="3.3.3" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#tests-in-nonparametric-models"><i class="fa fa-check"></i><b>3.3.3</b> Tests in Nonparametric Models</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="confidence-sets.html"><a href="confidence-sets.html"><i class="fa fa-check"></i><b>3.4</b> Confidence Sets</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="estimation-in-parametric-models.html"><a href="estimation-in-parametric-models.html"><i class="fa fa-check"></i><b>4</b> Estimation in Parametric Models</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="bayes-estimators.html"><a href="bayes-estimators.html"><i class="fa fa-check"></i><b>4.1</b> Bayes Estimators</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="bayes-estimators.html"><a href="bayes-estimators.html#markov-chain-monte-carlo"><i class="fa fa-check"></i><b>4.1.1</b> Markov chain Monte Carlo</a></li>
+<li class="chapter" data-level="4.1.2" data-path="bayes-estimators.html"><a href="bayes-estimators.html#asymptotic-efficiency-of-bayes-estimators"><i class="fa fa-check"></i><b>4.1.2</b> Asymptotic efficiency of Bayes Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="method-of-maximum-likelihood.html"><a href="method-of-maximum-likelihood.html"><i class="fa fa-check"></i><b>4.2</b> Method of Maximum Likelihood</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="method-of-maximum-likelihood.html"><a href="method-of-maximum-likelihood.html#mle"><i class="fa fa-check"></i><b>4.2.1</b> MLE</a></li>
+<li class="chapter" data-level="4.2.2" data-path="method-of-maximum-likelihood.html"><a href="method-of-maximum-likelihood.html#quasi-likelihoods-and-conditional-likelihoods"><i class="fa fa-check"></i><b>4.2.2</b> Quasi-likelihoods and conditional likelihoods</a></li>
+<li class="chapter" data-level="4.2.3" data-path="method-of-maximum-likelihood.html"><a href="method-of-maximum-likelihood.html#asymptotic-efficiency"><i class="fa fa-check"></i><b>4.2.3</b> Asymptotic efficiency</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="math-example.html"><a href="math-example.html"><i class="fa fa-check"></i><b>4.3</b> math example</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="estimation-in-nonparametric-models.html"><a href="estimation-in-nonparametric-models.html"><i class="fa fa-check"></i><b>5</b> Estimation in Nonparametric Models</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="distributional-estimators.html"><a href="distributional-estimators.html"><i class="fa fa-check"></i><b>5.1</b> Distributional Estimators</a></li>
+<li class="chapter" data-level="5.2" data-path="statistical-functionals.html"><a href="statistical-functionals.html"><i class="fa fa-check"></i><b>5.2</b> Statistical Functionals</a></li>
+<li class="chapter" data-level="5.3" data-path="sample-quantiles.html"><a href="sample-quantiles.html"><i class="fa fa-check"></i><b>5.3</b> Sample quantiles</a></li>
+<li class="chapter" data-level="5.4" data-path="generalized-estimating-equations.html"><a href="generalized-estimating-equations.html"><i class="fa fa-check"></i><b>5.4</b> Generalized Estimating Equations</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="generalized-estimating-equations.html"><a href="generalized-estimating-equations.html#framework"><i class="fa fa-check"></i><b>5.4.1</b> Framework</a></li>
+<li class="chapter" data-level="5.4.2" data-path="generalized-estimating-equations.html"><a href="generalized-estimating-equations.html#consistency"><i class="fa fa-check"></i><b>5.4.2</b> Consistency</a></li>
+<li class="chapter" data-level="5.4.3" data-path="generalized-estimating-equations.html"><a href="generalized-estimating-equations.html#asymptotic-normality"><i class="fa fa-check"></i><b>5.4.3</b> Asymptotic normality</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="generalized-methods-of-moments.html"><a href="generalized-methods-of-moments.html"><i class="fa fa-check"></i><b>5.5</b> Generalized Methods of Moments</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Topics in Mathematical Statistics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="asymptotical-theory" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Asymptotical Theory<a href="asymptotical-theory.html#asymptotical-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="conditional-expectation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="statistical-decision-theory.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-prob.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
