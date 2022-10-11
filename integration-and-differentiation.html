@@ -5,25 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.2 Integration and Differentiation | Topics in Mathematical Statistics</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="description" content="This is my note of topics in mathematical statistics (under writing)." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.2 Integration and Differentiation | Topics in Mathematical Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This is my note of topics in mathematical statistics (under writing)." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="2.2 Integration and Differentiation | Topics in Mathematical Statistics" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This is my note of topics in mathematical statistics (under writing)." />
   
 
 <meta name="author" content="Huei-Yuan Yao" />
 
 
-<meta name="date" content="2022-09-27" />
+<meta name="date" content="2022-10-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -80,7 +80,11 @@
 <li class="chapter" data-level="2.1.1" data-path="probability-spaces-and-random-elements.html"><a href="probability-spaces-and-random-elements.html#recap-measure-theory"><i class="fa fa-check"></i><b>2.1.1</b> Recap: Measure theory</a></li>
 <li class="chapter" data-level="2.1.2" data-path="probability-spaces-and-random-elements.html"><a href="probability-spaces-and-random-elements.html#measurable-functions"><i class="fa fa-check"></i><b>2.1.2</b> Measurable Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html"><i class="fa fa-check"></i><b>2.2</b> Integration and Differentiation</a></li>
+<li class="chapter" data-level="2.2" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html"><i class="fa fa-check"></i><b>2.2</b> Integration and Differentiation</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html#lebesgue-integral"><i class="fa fa-check"></i><b>2.2.1</b> Lebesgue integral</a></li>
+<li class="chapter" data-level="2.2.2" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html#radon-nikodym-derivative"><i class="fa fa-check"></i><b>2.2.2</b> Radon-Nikodym Derivative</a></li>
+</ul></li>
 <li class="chapter" data-level="2.3" data-path="conditional-expectation.html"><a href="conditional-expectation.html"><i class="fa fa-check"></i><b>2.3</b> Conditional Expectation</a></li>
 <li class="chapter" data-level="2.4" data-path="asymptotical-theory.html"><a href="asymptotical-theory.html"><i class="fa fa-check"></i><b>2.4</b> Asymptotical Theory</a></li>
 </ul></li>
@@ -153,6 +157,82 @@
             <section class="normal" id="section-">
 <div id="integration-and-differentiation" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Integration and Differentiation<a href="integration-and-differentiation.html#integration-and-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="lebesgue-integral" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Lebesgue integral<a href="integration-and-differentiation.html#lebesgue-integral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An usual way to define Lebesgue integral is from simple function to non-negative function by approximation property, then to a general function by an easy decomposition. Let us start from simple function. Assume <span class="math inline">\(\phi=\sum_\limits{i=1}^k a_iI_{A_i}\)</span>, <span class="math inline">\(A_i\)</span>’s are disjoint. Then its integral with respect to measure <span class="math inline">\(\nu\)</span> is <span class="math display">\[\int \phi d\nu=\sum_\limits{i=1}^k a_i\nu(A_i).\]</span> Clearly <span class="math inline">\(A_i\)</span> is required to be measruable which is equivalent to say <span class="math inline">\(\phi\)</span> is measurable. It can be seen such integration concept comes from “partition the range” while the Riemann integration comes from partition of the domain. This is also shown in the construction of the approximation property. In particular, we define <span class="math inline">\(a\infty=0\)</span> when <span class="math inline">\(a=0\)</span> to deal with some special circumstances. For non-negative function we have two equivalent definition of integration.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-12" class="definition"><strong>Definition 2.6  </strong></span>Let <span class="math inline">\(f\)</span> be a non-negative Borel function and define its integral to be
+<span class="math display">\[\int f d\nu=\underset{\phi\in S_f}{\mbox{sup}} \int \phi d\nu,\]</span> where <span class="math inline">\(S_f\)</span> is the collection of all non-negative simple function satisfying <span class="math inline">\(\phi(\omega) \leq f(\omega)\)</span> for any <span class="math inline">\(\omega \in \Omega\)</span>.</p>
+</div>
+<p>Another definition may be more suitable for operation, which comes from the well known Monotone Convergence Theorem.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-13" class="definition"><strong>Definition 2.7  </strong></span>Let <span class="math inline">\(f\)</span> be a non-negative Borel function and define its integral to be
+<span class="math display">\[\int f d\nu=\lim_{n \to \infty} \int f_n d\nu,\]</span> where <span class="math inline">\(0 \leq f_n \uparrow f\)</span> for <span class="math inline">\(f_n\)</span> is simple function for all <span class="math inline">\(n\)</span>.</p>
+</div>
+<p>For general function <span class="math inline">\(f\)</span>, its integral is defined as
+<span class="math display">\[\int f d\nu=\int f_{+} d\nu-\int f_{-} d\nu,\]</span> we say this integral exists if and only if both integral on the right hand side are finite. Furthermore, we say <span class="math inline">\(f\)</span> is integrable if both integral are finite. Clearly, we have <span class="math inline">\(f\)</span> is integrable if and only if <span class="math inline">\(|f|\)</span> is since <span class="math inline">\(|f|=f_{+}+f_{-}\)</span>.</p>
+<p>Below are some basic proposition:</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-14" class="proposition"><strong>Proposition 2.3  </strong></span>Let <span class="math inline">\(f\)</span> ang <span class="math inline">\(g\)</span> are Borel function. Then</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline">\(f \leq g\)</span> and <span class="math inline">\(a \in \mathbb{R}\)</span>, then <span class="math inline">\(\int (af)\, d\nu\)</span> exists and is equal to <span class="math inline">\(a\int f \, d\nu\)</span>.</li>
+<li>If both <span class="math inline">\(\int f \, d\nu\)</span> and <span class="math inline">\(\int g \, d\nu\)</span> exist and <span class="math inline">\(\int f \, d\nu+\int g \, d\nu\)</span> is well defined (not <span class="math inline">\(\infty-\infty\)</span>), then <span class="math inline">\(\int (f+g) \, d\nu\)</span> exists and is eual to <span class="math inline">\(\int f \, d\nu+\int g \, d\nu\)</span>.</li>
+<li>If <span class="math inline">\(f \leq g\)</span> a.e., then <span class="math inline">\(\int f \, d\nu \leq \int g \, d\nu\)</span> if the integrals exist.</li>
+<li>If <span class="math inline">\(f \geq 0\)</span> a.e. and <span class="math inline">\(\int f d\nu =0\)</span>, then <span class="math inline">\(f=0\)</span> a.e.</li>
+<li><span class="math inline">\(\nu(A)=0\)</span> implies that <span class="math inline">\(\int_A f d\nu =0\)</span> where <span class="math inline">\(\int_A f d\nu := \int fI_A d\nu\)</span>.</li>
+</ol>
+</div>
+<p>Here we also recall some classic theorem about limit and integral without proof in the next proposition.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-15" class="proposition"><strong>Proposition 2.4  </strong></span>Let <span class="math inline">\(f_1, f_2,\cdots,\)</span> be a sequence of Borel functions on <span class="math inline">\((\Omega,\cal F,\nu)\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>(Monotone convergence theorem). If <span class="math inline">\(0 \leq f_1 \leq f_2 \leq \cdots\)</span> and <span class="math inline">\(\lim_\limits{n \to \infty} f_n=f\)</span> a.e., then <span class="math inline">\(\int \lim_\limits{n \to \infty} f_n d\nu=\lim_\limits{n \to \infty} \int f_n d\nu\)</span>.</li>
+<li>(Dominated convergence theorem). If <span class="math inline">\(\lim_\limits{n \to \infty} f_n=f\)</span> a.e. and there exists an integrable function <span class="math inline">\(g\)</span> such that <span class="math inline">\(|f_n| \leq g\)</span> a.e., then <span class="math inline">\(\int \lim_\limits{n \to \infty} f_n d\nu=\lim_\limits{n \to \infty} \int f_n d\nu\)</span>.</li>
+<li>(Fatous’s lemma). If <span class="math inline">\(f_n \geq 0\)</span>, then <span class="math inline">\(\int \lim_\limits{n \to \infty} f_n d\nu=\lim_\limits{n \to \infty} \int f_n d\nu\)</span>.</li>
+</ol>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-16" class="example"><strong>Example 2.2  </strong></span>Here we consider the interchange of differentiation and integration. That is, for fixed <span class="math inline">\(\theta \in \mathbb{R}\)</span>, let <span class="math inline">\(f(\omega, \theta)\)</span> be a Borel function on <span class="math inline">\((\Omega,\cal F,\nu)\)</span>. Assume that <span class="math inline">\(\partial f(\omega, \theta)/\partial \theta\)</span> exists a.e. for <span class="math inline">\(\theta \in (a,b) \subset \mathbb{R}\)</span> and that <span class="math inline">\(|\partial f(\omega, \theta)/\partial \theta| \leq g(\omega)\)</span> a.e., where <span class="math inline">\(g\)</span> is an integrable function on <span class="math inline">\(\Omega\)</span>. Then for each <span class="math inline">\(\theta \in (a,b)\)</span>, <span class="math inline">\(\partial f(\omega, \theta)/\partial \theta\)</span> is integrable and by mean value theorem and Dominated convergence theorem, we have <span class="math display">\[\frac{d}{d\theta} \int f(\omega, \theta) d\nu= \int (\partial f(\omega, \theta)/\partial \theta) \, d\nu.\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-17" class="example"><strong>Example 2.3  </strong></span>Consider the moment generating function of a random variable <span class="math inline">\(X\)</span>, <span class="math inline">\(M(t)\)</span> on a finite interval <span class="math inline">\((a,b)\)</span>. By the above example and the fact that <span class="math inline">\(|x|e^{t_0x} \leq c_{+} e^{(t_0+\delta) x}+c_{-} e^{(t_0-\delta) x}\)</span>, where <span class="math inline">\(c_{+}=\underset{x \geq 0}{\max} \frac{|x|e^{tx}}{e^{(t_0+\delta)x} }\)</span> and <span class="math inline">\(c_{-}=\underset{x \leq 0}{\max} \frac{|x|e^{tx}}{e^{(t_0-\delta)x} }\)</span> for some <span class="math inline">\(t_0 \in (a,b)\)</span>, then we have <span class="math inline">\(M&#39;(t)=E(Xe^{tX})\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-18" class="theorem"><strong>Theorem 2.2  (Change of variables) </strong></span>Let <span class="math inline">\(f\)</span> be measurable from <span class="math inline">\((\Omega,\cal F,\nu)\)</span> to <span class="math inline">\((\Lambda,\cal G)\)</span> and <span class="math inline">\(g\)</span> be Borel on <span class="math inline">\((\Lambda,\cal G)\)</span>. Then
+<span class="math display">\[\int_{\Omega} g(f(\omega)) d\nu(\omega)= \int_{\Lambda} g(x) d(\nu \circ f^{-1})(x),\]</span> where <span class="math inline">\(\nu \circ f^{-1}(B):= \nu(f^{-1}(B))\)</span> for <span class="math inline">\(B \in \cal G\)</span>.</p>
+</div>
+<p>Consider an easy case, let <span class="math inline">\(g=\sum_\limits{i=1}^k c_iI_{A_i}\)</span> for <span class="math inline">\(A_1,\cdots, A_k\)</span> disjoint. Then the right hand side is equal to <span class="math inline">\(\sum_\limits{i=1}^k c_i\, \nu\circ f^{-1}(A_i)\)</span> and let <span class="math inline">\(B_i=f^{-1}(A_i)\)</span>, then the equality holds clearly.</p>
+<p>An important application of the theorem is that for random variable X with distribution <span class="math inline">\(P \circ X^{-1}\)</span>, we have
+<span class="math display">\[ E(g(X))=\int g(X(\omega)) dP(\omega)=\int g(x) dP\circ X^{-1}(x).\]</span> Also, by the uniqueness theorem of measure, <span class="math inline">\(P\circ X^{-1}\)</span> coincides with the cumulative density function <span class="math inline">\(F(x):=P(X\leq x)\)</span>. We also denote <span class="math inline">\(P\circ X^{-1}\)</span> as <span class="math inline">\(P_X\)</span>, the distribution of <span class="math inline">\(X\)</span>. Below we consider the interchange of integration which is known as Fubini’s Theorem.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-19" class="theorem"><strong>Theorem 2.3  (Fubini Theorem) </strong></span>Let <span class="math inline">\(\nu_i\)</span> be <span class="math inline">\(\sigma\)</span>-finite measure on <span class="math inline">\((\Omega_i,\cal F_i)\)</span> for <span class="math inline">\(i=1,2\)</span>, and let <span class="math inline">\(f\)</span> be Borel function on the product <span class="math inline">\(\sigma\)</span> algebra. Suppose <span class="math inline">\(f \geq 0\)</span> (w.r.t. Tonelli’s theorem) or <span class="math inline">\(f\)</span> integrable with respect to <span class="math inline">\(\nu_1 \times \nu_2\)</span>. Then
+<span class="math display">\[\int_{\Omega_1} f(\omega_1,\omega_2) d\nu_1\]</span> exists <span class="math inline">\(\nu_2\)</span>-a.e. and is a Borel function on <span class="math inline">\(\Omega_2\)</span> whose integral with respect to <span class="math inline">\(\nu_2\)</span> exists, and
+<span class="math display">\[\int_{\Omega_1 \times \Omega_2} f(\omega_1,\omega_2)=\int_{\Omega_2}(\int_{\Omega_1} f(\omega_1,\omega_2) d\nu_1) d\nu_2.\]</span></p>
+</div>
+<p>The “<span class="math inline">\(\sigma\)</span>-finite” condition on the measures is assumed for the uniqueness of <span class="math inline">\(\nu_1 \times \nu_2\)</span>. It can be seen necessary if we consider the interchange of integral of an indicator function on which the set is an arbitrary set in the product field.</p>
+<p>In the following We discuss the coincidence of Riemann integral and Lebesgue integral. An easy result can be shown on finite interval <span class="math inline">\((a,b)\)</span> that Riemann integrability implies Lebesgue integrability and the values of the integrals coincides. That is,
+<span class="math display">\[\int_{(a,b)} f d\lambda=\int_a^b f(x) dx. \]</span> Furthermore, we can extend the result to the domain like <span class="math inline">\((0,\infty)\)</span> for a positive function <span class="math inline">\(f\)</span> by the monotone convergence theorem.</p>
+<p>We end this chapter by the two classical examples. The first one is used for calculating the expectation of a positvie random variable.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-20" class="example"><strong>Example 2.4  </strong></span>Combining the result of Fubini’s Theorem and the above consequence, we can show that for <span class="math inline">\(X&gt; 0\)</span>, <span class="math display">\[E(X)=\int_0^{\infty}(1-F(t)) \, dt.\]</span> Let the <span class="math inline">\(\lambda\)</span> be Lebesgue measure, the RHS can be written as <span class="math inline">\(\int_{(0,\infty)} \int I_{(t, \infty)}(x) dP_X(x) \, d\lambda(t)\)</span>, then the result follows by applying Fubini’s Theorem.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-21" class="example"><strong>Example 2.5  </strong></span>For function <span class="math inline">\(f \geq 0\)</span> taken values on <span class="math inline">\(\Omega=(\omega_1,\omega_2,\cdots)\)</span>, by monotone convergence theorem and the fact that <span class="math inline">\(f=\lim_\limits{n\to \infty} \sum_\limits{i=1}^n f(\omega_i)\)</span> we have <span class="math inline">\(\int f d\nu= \sum_i f(\omega_i)\nu(\omega_i)\)</span>.</p>
+</div>
+</div>
+<div id="radon-nikodym-derivative" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Radon-Nikodym Derivative<a href="integration-and-differentiation.html#radon-nikodym-derivative" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-22" class="definition"><strong>Definition 2.8  (absolutely continuous) </strong></span>Given two measures <span class="math inline">\(\mu,\nu\)</span> on <span class="math inline">\((\Omega, \cal F)\)</span>, we say <span class="math inline">\(\mu\)</span> is absolutely continuous with respect to <span class="math inline">\(\nu\)</span>, denoted by <span class="math inline">\(\mu \ll \nu\)</span>, if <span class="math inline">\(\nu(A)=0\)</span> implies <span class="math inline">\(\mu(A)=0\)</span> for any <span class="math inline">\(A \in \cal F\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-23" class="theorem"><strong>Theorem 2.4  (Rando-Nikodym Theorem) </strong></span>Given two measures <span class="math inline">\(\mu,\nu\)</span> on <span class="math inline">\((\Omega, \cal F)\)</span> and <span class="math inline">\(\nu\)</span> is <span class="math inline">\(\sigma\)</span>-fintie. If <span class="math inline">\(\mu \ll\nu\)</span>, then there exists a nonnegative Borel function <span class="math inline">\(f\)</span>, which is unique <span class="math inline">\(\nu\)</span>-a.e. on <span class="math inline">\(\Omega\)</span> such that <span class="math display">\[\mu(A)=\int_A f d\nu.\]</span></p>
+</div>
+<p>Such function <span class="math inline">\(f\)</span> is called a Rando-Nikodym derivative or density and is denote by <span class="math inline">\(\frac{d\mu}{d\nu}\)</span>. A function <span class="math inline">\(f\geq 0\)</span> <span class="math inline">\(\nu\)</span>-a.e. is called probabiilty density function (p.d.f.) w.r.t a probabiity measure <span class="math inline">\(\mu\)</span> if <span class="math inline">\(\int f d\nu=1\)</span>. A discrete p.d.f. is a p.d.f w.r.t counting measure and a Lebesgue p.d.f corresponds to Lebesgue measure. A sufficient and necessary condition for a c.d.f. <span class="math inline">\(F\)</span> having a Lebesgue p.d.f is that <span class="math inline">\(F\)</span> is absolutely continuous. Below we consider a special case that both Lebesgue p.d.f and discrete p.d.f cannot be well defined.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-24" class="example"><strong>Example 2.6  </strong></span>Suppose that <span class="math inline">\(Z\)</span> is a standard normal r.v. and <span class="math inline">\(X=ZI_{[1,\infty]}(Z)\)</span>, clearly <span class="math inline">\(X\)</span> has no Lebesgue density since <span class="math inline">\(P_X({0})\neq 0\)</span>. Let <span class="math inline">\(\mu\)</span> be the probability measure on <span class="math inline">\((\mathbb{R},\cal B)\)</span> such that <span class="math inline">\(\delta_0(A)=I_A(0)\)</span>. First we claim that <span class="math inline">\(P_X \ll \delta_0+\lambda\)</span> since for any set <span class="math inline">\(A\in \cal F\)</span>, <span class="math inline">\((\delta_0+\lambda)(A)=0\)</span> implies <span class="math inline">\(0 \notin A\)</span> and <span class="math inline">\(\lambda(A)=0\)</span>. Then <span class="math inline">\(P_X(A)=P(Z\geq 1,Z \in A)+P(Z&lt;1,Z \in A)\stackrel{0\notin A}=P(Z\geq 1,Z \in A)\stackrel{\lambda(A)=0}=0,\)</span> which proves the claim. Secondly, we would like to find out the Radon-Nikodym derivative <span class="math inline">\(\frac{dP_X}{d(\delta_0+\lambda)}\)</span>.</p>
+</div>
+</div>
 </div>
             </section>
 

@@ -5,25 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.1 Probability Spaces and Random Elements | Topics in Mathematical Statistics</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="description" content="This is my note of topics in mathematical statistics (under writing)." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.1 Probability Spaces and Random Elements | Topics in Mathematical Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This is my note of topics in mathematical statistics (under writing)." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="2.1 Probability Spaces and Random Elements | Topics in Mathematical Statistics" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This is my note of topics in mathematical statistics (under writing)." />
   
 
 <meta name="author" content="Huei-Yuan Yao" />
 
 
-<meta name="date" content="2022-09-27" />
+<meta name="date" content="2022-10-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -80,7 +80,11 @@
 <li class="chapter" data-level="2.1.1" data-path="probability-spaces-and-random-elements.html"><a href="probability-spaces-and-random-elements.html#recap-measure-theory"><i class="fa fa-check"></i><b>2.1.1</b> Recap: Measure theory</a></li>
 <li class="chapter" data-level="2.1.2" data-path="probability-spaces-and-random-elements.html"><a href="probability-spaces-and-random-elements.html#measurable-functions"><i class="fa fa-check"></i><b>2.1.2</b> Measurable Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html"><i class="fa fa-check"></i><b>2.2</b> Integration and Differentiation</a></li>
+<li class="chapter" data-level="2.2" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html"><i class="fa fa-check"></i><b>2.2</b> Integration and Differentiation</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html#lebesgue-integral"><i class="fa fa-check"></i><b>2.2.1</b> Lebesgue integral</a></li>
+<li class="chapter" data-level="2.2.2" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html#radon-nikodym-derivative"><i class="fa fa-check"></i><b>2.2.2</b> Radon-Nikodym Derivative</a></li>
+</ul></li>
 <li class="chapter" data-level="2.3" data-path="conditional-expectation.html"><a href="conditional-expectation.html"><i class="fa fa-check"></i><b>2.3</b> Conditional Expectation</a></li>
 <li class="chapter" data-level="2.4" data-path="asymptotical-theory.html"><a href="asymptotical-theory.html"><i class="fa fa-check"></i><b>2.4</b> Asymptotical Theory</a></li>
 </ul></li>
@@ -159,16 +163,16 @@
 <!-- this is for annotation-->
 <!-- ^[This is a footnote.] -->
 <div class="definition">
-<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 2.1  (Sigma Algebra (Field)) </strong></span>Let <span class="math inline">\(\cal F\)</span> be a collection of subsets of a sample space <span class="math inline">\(\Omega\)</span>. <span class="math inline">\(\cal F\)</span> is called a sigma algebra on <span class="math inline">\(\Omega\)</span> if</p>
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 2.1  </strong></span><strong>( <span class="math inline">\(\sigma\)</span>-algebra)</strong> Let <span class="math inline">\(\cal F\)</span> be a collection of subsets of a sample space <span class="math inline">\(\Omega\)</span>. <span class="math inline">\(\cal F\)</span> is called a <span class="math inline">\(\sigma\)</span>-algebra or <span class="math inline">\(\sigma\)</span>-field on <span class="math inline">\(\Omega\)</span> if</p>
 <ol style="list-style-type: decimal">
 <li>The empty set <span class="math inline">\(\phi \in \cal F\)</span>.</li>
 <li>If <span class="math inline">\(A \in \cal F\)</span>, then <span class="math inline">\(A^c \in \cal F\)</span>.</li>
 <li>If <span class="math inline">\(A_i \in \cal F\)</span> for <span class="math inline">\(i=1,2,\cdots\)</span>, then <span class="math inline">\(\cup_{i=1}^{\infty} A_i \in \cal F\)</span>.</li>
 </ol>
 </div>
-<p>We denote the smallest sigma algebra containing a collection <span class="math inline">\(C\)</span> as <span class="math inline">\(\sigma(C)\)</span>. In particular, we denote <span class="math inline">\(\cal B= \sigma(C)\)</span> the sigma algebra (called <strong>Borel field</strong>) where <span class="math inline">\(C\)</span> denotes all finite open interval on <span class="math inline">\(\mathbb{R}\)</span>. By Linderberg’s covering lemma, we can see <span class="math inline">\(\cal B\)</span> is also the smallest sigma algebra containing the collection of all open sets on <span class="math inline">\(\mathbb{R}\)</span>. Furthermore, we denote <span class="math inline">\(\cal B^k\)</span> as the Borel field in <span class="math inline">\(\mathbb{R}^k\)</span>. Define the pair <span class="math inline">\((\Omega, \cal F)\)</span> a measurable space if <span class="math inline">\(\cal F\)</span> is a sigma algebra on <span class="math inline">\(\Omega\)</span>.</p>
+<p>We denote the smallest sigma algebra containing a collection <span class="math inline">\(C\)</span> as <span class="math inline">\(\sigma(C)\)</span>. In particular, we denote <span class="math inline">\(\cal B= \sigma(C)\)</span> the <span class="math inline">\(\sigma\)</span>-field (called <strong>Borel field</strong>) where <span class="math inline">\(C\)</span> denotes all finite open interval on <span class="math inline">\(\mathbb{R}\)</span>. By Linderberg’s covering lemma, we can see <span class="math inline">\(\cal B\)</span> is also the smallest <span class="math inline">\(\sigma\)</span>-field containing the collection of all open sets on <span class="math inline">\(\mathbb{R}\)</span>. Furthermore, we denote <span class="math inline">\(\cal B^k\)</span> as the Borel field in <span class="math inline">\(\mathbb{R}^k\)</span>. Define the pair <span class="math inline">\((\Omega, \cal F)\)</span> a measurable space if <span class="math inline">\(\cal F\)</span> is a <span class="math inline">\(\sigma\)</span>-field on <span class="math inline">\(\Omega\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 2.2  (Measure) </strong></span>A set function <span class="math inline">\(\nu(\cdot)\)</span> defined on <span class="math inline">\(\cal F\)</span> is a measure if</p>
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 2.2  (Measure) </strong></span>A set function <span class="math inline">\(\nu(\cdot)\)</span> defined on a <span class="math inline">\(\sigma\)</span>-field <span class="math inline">\(\cal F\)</span> is a measure if</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(0 \leq \nu(A) \leq \infty\)</span> for any <span class="math inline">\(A \in \cal F\)</span>.</li>
 <li><span class="math inline">\(\nu(\phi)=0\)</span></li>
@@ -180,9 +184,9 @@
 <div class="proposition">
 <p><span id="prp:unlabeled-div-3" class="proposition"><strong>Proposition 2.1  </strong></span>Let <span class="math inline">\((\Omega,\cal F,\nu)\)</span> be a measure space.</p>
 <ol style="list-style-type: decimal">
-<li>If <span class="math inline">\(A \subset B\)</span>, then <span class="math inline">\(\nu(A)\leq \nu (B)\)</span>.</li>
-<li>For any sequence <span class="math inline">\(A_1,A_2,\cdots\)</span>, <span class="math display">\[\nu(\cup_i A_i)\leq \sum_i \nu(A_i).\]</span></li>
-<li>If <span class="math inline">\(A_1 \subset A_2 \subset \cdots\)</span> (or <span class="math inline">\(A_1 \supset A_2 \supset \cdots\)</span> and <span class="math inline">\(\nu(A_k)&lt;\infty\)</span> for some <span class="math inline">\(k\in \mathbb{N}\)</span>), then <span class="math display">\[\nu(\lim_{k \to \infty}A_k)=\lim_{k\to \infty}\nu(A_k).\]</span></li>
+<li>If <span class="math inline">\(A \subset B \in \cal F\)</span>, then <span class="math inline">\(\nu(A)\leq \nu (B)\)</span>.</li>
+<li>For any sequence <span class="math inline">\(A_1,A_2,\cdots \in \cal F\)</span>, <span class="math display">\[\nu(\cup_i A_i)\leq \sum_i \nu(A_i).\]</span></li>
+<li>If <span class="math inline">\(A_1 \subset A_2 \subset \cdots \in \cal F\)</span> (or <span class="math inline">\(A_1 \supset A_2 \supset \cdots\)</span> and <span class="math inline">\(\nu(A_k)&lt;\infty\)</span> for some <span class="math inline">\(k\in \mathbb{N}\)</span>), then <span class="math display">\[\nu(\lim_{k \to \infty}A_k)=\lim_{k\to \infty}\nu(A_k).\]</span></li>
 </ol>
 </div>
 <p>Below we see some uniqueness theorem about the measure, or the result of the well known Dinkin’s <span class="math inline">\(\pi\)</span>-<span class="math inline">\(\lambda\)</span> theorem.</p>
@@ -192,20 +196,39 @@
 <div class="definition">
 <p><span id="def:unlabeled-div-5" class="definition"><strong>Definition 2.4  </strong></span>Let <span class="math inline">\(C\)</span> be a collection of some subsets of <span class="math inline">\(\Omega\)</span>. A measure <span class="math inline">\(\mu\)</span> is <span class="math inline">\(\sigma\)</span>-finite on <span class="math inline">\(C\)</span> if there exist a sequence of sets <span class="math inline">\(\{A_k\}\)</span> in <span class="math inline">\(C\)</span> such that <span class="math inline">\(\Omega=\cup_k A_k\)</span> and <span class="math inline">\(\mu(A_K)&lt;\infty\)</span> for all <span class="math inline">\(k\)</span>.</p>
 </div>
-<p>Lebesgue measure is an example of <span class="math inline">\(\sigma\)</span>-finite measure on <span class="math inline">\(\cal B\)</span>. Since probability measure is always finite, so it is <span class="math inline">\(sigma\)</span>-finite.</p>
+<p>Lebesgue measure is an example of <span class="math inline">\(\sigma\)</span>-finite measure on <span class="math inline">\(\cal B\)</span>. Since probability measure is always finite, so it is <span class="math inline">\(\sigma\)</span>-finite.</p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-6" class="theorem"><strong>Theorem 2.1  (Theorem 10.3 in Billingsley, 1986) </strong></span>Suppose that <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span> are measures on <span class="math inline">\(\sigma(\cal P)\)</span>, where <span class="math inline">\(\cal P\)</span> is a <span class="math inline">\(\pi\)</span>-system. Suppose they are both <span class="math inline">\(\sigma\)</span>-finite and agree on <span class="math inline">\(\cal P\)</span>, then they also agree on <span class="math inline">\(\sigma(\cal P)\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-7" class="example"><strong>Example 2.1  </strong></span>Here are some examples using the uniqueness theorem:</p>
+<ol style="list-style-type: decimal">
+<li><p>If <span class="math inline">\(\mu\)</span> is a measure defined on <span class="math inline">\(\cal B\)</span> and <span class="math inline">\(\mu([a,b])=b-a\)</span>, then by checking that <span class="math inline">\(\cal P:=\{[a,b]\,|-\infty&lt;a&lt;b&lt;\infty\}\)</span> is a <span class="math inline">\(\pi\)</span>- system and <span class="math inline">\(\cal B=\sigma(\cal P)\)</span> we can show that <span class="math inline">\(\mu\)</span> agrees with the Lebesgue measure on <span class="math inline">\(\cal B\)</span>.</p></li>
+<li><p>(Billingsley, pp.225-236, 1986) Given measurable spaces <span class="math inline">\((\Omega_i, \cal F_i,\nu_i)_{i=1}^k\)</span> with <span class="math inline">\(\sigma\)</span>- finite measures, there exists a unique <span class="math inline">\(\sigma\)</span>- finite measure on product <span class="math inline">\(\sigma\)</span>- field <span class="math inline">\(\sigma(\prod_\limits{i=1}^k \cal F_i)\)</span>, which is known as <strong>product measure</strong>, defined by <span class="math display">\[\nu_1\times\cdots\times\nu_k\,(A_1\times\cdots\times A_k):=\prod_\limits{i=1}^k \nu_i(A_i)\]</span> for all <span class="math inline">\(A_i \in \cal F_i,\,i=1,\cdots,k\)</span>.</p></li>
+</ol>
 </div>
 </div>
 <div id="measurable-functions" class="section level3 hasAnchor" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Measurable Functions<a href="probability-spaces-and-random-elements.html#measurable-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-8" class="definition"><strong>Definition 2.5  (Measurable functions) </strong></span>Let <span class="math inline">\(f\)</span> be a function from <span class="math inline">\((\Omega,\cal F)\)</span> to <span class="math inline">\((\Lambda, \cal G)\)</span> (both are measurable spaces). Then <span class="math inline">\(f\)</span> is called a measurable function if <span class="math inline">\(f^{-1}(\cal G) \subset \cal F\)</span>, where <span class="math inline">\(f^{-1}(\cal G):=\{f^{-1}(A)\,|\, A\in \cal G\}.\)</span></p>
+</div>
+<p>In the other words, preimage of any set in <span class="math inline">\(\cal G\)</span> of a measurable fucntion also lies in <span class="math inline">\(\cal F\)</span>. If <span class="math inline">\(\Lambda=\mathbb{R}\)</span> and <span class="math inline">\(\cal G=\cal B\)</span>, <span class="math inline">\(f\)</span> is called a <strong>Borel function</strong>. Furthermore, a Borel function defined on a probability space is called a <strong>random Variable</strong> (a random vector with respect to (<span class="math inline">\(\mathbb{R}^k,\cal B^k\)</span>)).</p>
+<p>It is worthy noting that we may not require <span class="math inline">\(\cal F\)</span> to be the <span class="math inline">\(\sigma\)</span>- field on which <span class="math inline">\(f\)</span> is measurable. In particular, it is easy to prove that <span class="math inline">\(f^{-1}(\cal G)\)</span> is also a <span class="math inline">\(\sigma\)</span>- field. This “smaller <span class="math inline">\(\sigma\)</span>- field is called <span class="math inline">\(\sigma\)</span>- field induced by <span class="math inline">\(f\)</span> and we denote it by <span class="math inline">\(\sigma(f)\)</span>.</p>
+<p>We omit the technical proof of the measurability of a function under fundamental operation such as sup, inf, limsup, liminf. Indicator functions, continuous functions, composition of measurable functions are also measurable functions. Readers can refer to the textbook for the proof.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-9" class="proposition"><strong>Proposition 2.2  (Approximation property) </strong></span>Suppose that f is measurable from <span class="math inline">\((\Omega,\cal F)\)</span> to <span class="math inline">\((\bar{\mathbb{R}}, \bar{\cal B})\)</span>, where <span class="math inline">\(\bar{\mathbb{R}}\)</span> is the extended real line with respect to <span class="math inline">\(\bar{\cal B}\)</span>. First assume <span class="math inline">\(f \geq 0\)</span>, then there exists a positive and monotone sequence of simple functions <span class="math inline">\(\{f_n\}\)</span> such that <span class="math inline">\(f_n \to f\)</span>. For general measurable function <span class="math inline">\(f\)</span>, consider <span class="math inline">\(f=f^{+}-f^{-}\)</span> for general function <span class="math inline">\(f\)</span> and similar result goes.</p>
+</div>
+<p>Below we show a lemma which let us connect two measurable function.</p>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-7" class="lemma"><strong>Lemma 2.1  (Theorem A.42 in Schervish (1995)) </strong></span>Let <span class="math inline">\(Y\)</span> be measurable from <span class="math inline">\((\Omega,\cal F)\)</span> to <span class="math inline">\((\Lambda_Y,\cal G_Y)\)</span> and <span class="math inline">\(Z\)</span> be measurable from <span class="math inline">\((\Omega,\cal F)\)</span> to <span class="math inline">\((\Lambda_Z,\cal G_Z)\)</span>. Define <span class="math inline">\(T=\{Y(\omega),\omega \in \Omega\} \subset \Lambda_Y\)</span>. Then <span class="math inline">\(Z\)</span> is measurable from <span class="math inline">\((\Omega,\sigma(Y))\)</span> to <span class="math inline">\((\Lambda_Z,\cal G_Z)\)</span> if and only if <span class="math inline">\(Z=h \circ Y\)</span> for some <span class="math inline">\(h\)</span> that is measurable from <span class="math inline">\((T,T\cap \cal G_Y)\)</span> to <span class="math inline">\((\Lambda_Z,\cal G_Z)\)</span>.</p>
+<p><span id="lem:unlabeled-div-10" class="lemma"><strong>Lemma 2.1  (Theorem A.42 in Schervish, 1995) </strong></span>Let <span class="math inline">\(Y\)</span> be measurable from <span class="math inline">\((\Omega,\cal F)\)</span> to <span class="math inline">\((\Lambda_Y,\cal G_Y)\)</span> and <span class="math inline">\(Z\)</span> be measurable from <span class="math inline">\((\Omega,\cal F)\)</span> to <span class="math inline">\((\Lambda_Z,\cal G_Z)\)</span>. Define <span class="math inline">\(T=\{Y(\omega),\omega \in \Omega\} \subset \Lambda_Y\)</span>. Then <span class="math inline">\(Z\)</span> is measurable from <span class="math inline">\((\Omega,\sigma(Y))\)</span> to <span class="math inline">\((\Lambda_Z,\cal G_Z)\)</span> if and only if <span class="math inline">\(Z=h \circ Y\)</span> for some <span class="math inline">\(h\)</span> that is measurable from <span class="math inline">\((T,T\cap \cal G_Y)\)</span> to <span class="math inline">\((\Lambda_Z,\cal G_Z)\)</span>.</p>
 </div>
 <p>Remark: Proof of the “if” side is relatively obvious. (WLOG, we can assume <span class="math inline">\(\Lambda_Y\)</span> is the range of <span class="math inline">\(Y\)</span>.)</p>
 <div class="proof">
-<p><span id="unlabeled-div-8" class="proof"><em>Proof</em> (only if). </span>At first, we show that for <span class="math inline">\(\omega_1,\ \omega_2 \in \Omega\)</span>, <span class="math inline">\(Y(\omega_1)=Y(\omega_2)\)</span> implies <span class="math inline">\(Z(\omega_1)=Z(\omega_2)\)</span>. Suppose that <span class="math inline">\(Y(\omega_1)=Y(\omega_1)=a\)</span>. Since <span class="math inline">\(Z\)</span> is measurable with respect to <span class="math inline">\(\sigma(Y)\)</span>, there exist <span class="math inline">\(A \in \cal G_Y\)</span> such that <span class="math inline">\(Y^{-1}(A) =Z^{-1}(\{Z(\omega_1)\})\)</span>. Clearly <span class="math inline">\(\omega_1,\ \omega_2 \in Z^{-1}(\{Z(\omega_1)\})\)</span>, thus <span class="math inline">\(Z(\omega_1)=Z(\omega_2)\)</span>. By this first step, we can well defined the function <span class="math inline">\(h\)</span> such that <span class="math inline">\(h(Y(\omega))=Z(\omega)\)</span>.</p>
-<p>Secondly, we prove such <span class="math inline">\(h\)</span> is measurable.</p>
+<p><span id="unlabeled-div-11" class="proof"><em>Proof</em> (only if). </span>At first, we show that for <span class="math inline">\(\omega_1,\ \omega_2 \in \Omega\)</span>, <span class="math inline">\(Y(\omega_1)=Y(\omega_2)\)</span> implies <span class="math inline">\(Z(\omega_1)=Z(\omega_2)\)</span>. Suppose that <span class="math inline">\(Y(\omega_1)=Y(\omega_1)=a\)</span>. Since <span class="math inline">\(Z\)</span> is measurable with respect to <span class="math inline">\(\sigma(Y)\)</span>, there exist <span class="math inline">\(A \in \cal G_Y\)</span> such that <span class="math inline">\(Y^{-1}(A) =Z^{-1}(\{Z(\omega_1)\})\)</span>. Clearly <span class="math inline">\(\omega_1,\ \omega_2 \in Z^{-1}(\{Z(\omega_1)\})\)</span>, thus <span class="math inline">\(Z(\omega_1)=Z(\omega_2)\)</span>. By this first step, the function <span class="math inline">\(h\)</span> with <span class="math inline">\(h(Y(\omega))=Z(\omega)\)</span> is well defined with domain being the range of <span class="math inline">\(Y\)</span>.</p>
+<p>Secondly, we prove such <span class="math inline">\(h\)</span> is measurable with respect to <span class="math inline">\(T \,\cap\, \cal G_Y\)</span>. Given <span class="math inline">\(B \in \cal G_Z\)</span>, let <span class="math inline">\(A\)</span> be an event in <span class="math inline">\(\cal G_Y\)</span> such that <span class="math inline">\(Y^{-1}(A)=Z^{-1}(B)\)</span> which exists since <span class="math inline">\(Z\)</span> is measurable with respect to <span class="math inline">\(\sigma(Y)\)</span>, then <span class="math inline">\(h\)</span> is measurable if <span class="math inline">\(h^{-1}(B)=A\,\cap\,T\)</span>, where <span class="math inline">\(T\)</span> is the range of <span class="math inline">\(Y\)</span>.</p>
+<p>(<span class="math inline">\(h^{-1}(B)\subset A\,\cap\,T\)</span>). Given <span class="math inline">\(a \in h^{-1}(B)\)</span>, then <span class="math inline">\(h(a) \in B\)</span> and <span class="math inline">\(a=Y(\omega)\)</span> for some <span class="math inline">\(\omega\in \Omega\)</span> (<span class="math inline">\(a \in T\)</span>) by the domain of <span class="math inline">\(h\)</span>, and thus <span class="math inline">\(Z(\omega)=h(Y(\omega)) \in B\)</span>, <span class="math inline">\(\omega \in Z^{-1}(B)=Y^{-1}(A)\)</span> implies <span class="math inline">\(a \in A\)</span>.</p>
+<p>(<span class="math inline">\(A\,\cap\,T\subset h^{-1}(B)\)</span>). Given <span class="math inline">\(a \in A \cap T\)</span>, <span class="math inline">\(a=Y(\omega) \in A\)</span> for some <span class="math inline">\(\omega \in \Omega\)</span>, then <span class="math inline">\(\omega \in Y^{-1}(A)=Z^{-1}(B)\)</span> and by definition of <span class="math inline">\(h\)</span>, <span class="math inline">\(h(a)=Z(\omega)\in B\)</span>, thus <span class="math inline">\(a \in h^{-1}(B)\)</span>.</p>
 </div>
 </div>
 </div>
