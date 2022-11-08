@@ -23,7 +23,7 @@
 <meta name="author" content="Huei-Yuan Yao" />
 
 
-<meta name="date" content="2022-10-11" />
+<meta name="date" content="2022-11-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -85,7 +85,13 @@
 <li class="chapter" data-level="2.2.1" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html#lebesgue-integral"><i class="fa fa-check"></i><b>2.2.1</b> Lebesgue integral</a></li>
 <li class="chapter" data-level="2.2.2" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html#radon-nikodym-derivative"><i class="fa fa-check"></i><b>2.2.2</b> Radon-Nikodym Derivative</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="conditional-expectation.html"><a href="conditional-expectation.html"><i class="fa fa-check"></i><b>2.3</b> Conditional Expectation</a></li>
+<li class="chapter" data-level="2.3" data-path="conditional-expectation.html"><a href="conditional-expectation.html"><i class="fa fa-check"></i><b>2.3</b> Conditional Expectation</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="conditional-expectation.html"><a href="conditional-expectation.html#conditional-expectation-1"><i class="fa fa-check"></i><b>2.3.1</b> Conditional Expectation</a></li>
+<li class="chapter" data-level="2.3.2" data-path="conditional-expectation.html"><a href="conditional-expectation.html#independence"><i class="fa fa-check"></i><b>2.3.2</b> Independence</a></li>
+<li class="chapter" data-level="2.3.3" data-path="conditional-expectation.html"><a href="conditional-expectation.html#conditional-distribution"><i class="fa fa-check"></i><b>2.3.3</b> Conditional Distribution</a></li>
+<li class="chapter" data-level="2.3.4" data-path="conditional-expectation.html"><a href="conditional-expectation.html#markov-chain-and-martingale"><i class="fa fa-check"></i><b>2.3.4</b> Markov chain and Martingale</a></li>
+</ul></li>
 <li class="chapter" data-level="2.4" data-path="asymptotical-theory.html"><a href="asymptotical-theory.html"><i class="fa fa-check"></i><b>2.4</b> Asymptotical Theory</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="statistical-decision-theory.html"><a href="statistical-decision-theory.html"><i class="fa fa-check"></i><b>3</b> Statistical Decision Theory</a>
@@ -157,6 +163,83 @@
             <section class="normal" id="section-">
 <div id="conditional-expectation" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Conditional Expectation<a href="conditional-expectation.html#conditional-expectation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="conditional-expectation-1" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Conditional Expectation<a href="conditional-expectation.html#conditional-expectation-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-29" class="definition"><strong>Definition 2.9  </strong></span>Let <span class="math inline">\(X\)</span> be a integrable random variable on <span class="math inline">\((\Omega, \cal F,P)\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Let <span class="math inline">\(\cal A\)</span> be a sub <span class="math inline">\(\sigma\)</span>-field of <span class="math inline">\(\cal F\)</span>. The condition expectation of <span class="math inline">\(X\)</span> given <span class="math inline">\(\cal A\)</span> (which we denote it as <span class="math inline">\(E(X|\cal A)\)</span>) is the a.s.-unique random variable satisfying</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(E(X|\cal A)\)</span> is measurable from <span class="math inline">\((\Omega,\cal A)\)</span> to <span class="math inline">\((R,\cal B)\)</span> and</li>
+<li><span class="math inline">\(\int_A E(X|\cal A) \rm dP=\)</span> <span class="math inline">\(\int_{A} X dP\)</span> for all <span class="math inline">\(A \in \cal A\)</span>.</li>
+</ol></li>
+<li><p>Let <span class="math inline">\(B \in \cal F\)</span>. The conditional probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(\cal A\)</span> is defined to be <span class="math inline">\(P(B|\cal{A})=\)</span> <span class="math inline">\(E(I_B|\cal A)\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(Y\)</span> be measurable from <span class="math inline">\((\Omega, \cal F,P)\)</span> to <span class="math inline">\((\Lambda, \cal G)\)</span>. The conditional expectation of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y\)</span> is defined to be <span class="math inline">\(E(X|Y)=E(X|\sigma(Y))\)</span>.</p></li>
+</ol>
+</div>
+<p>Define <span class="math inline">\(\mu^{+}=\int_A X^{+} dP\)</span> for <span class="math inline">\(A \in \cal A\)</span>, then such <span class="math inline">\(\mu^{+}\)</span> is a measure on <span class="math inline">\(\cal A\)</span>. Let <span class="math inline">\(P_0\)</span> be the restriction of <span class="math inline">\(P\)</span> on <span class="math inline">\(\cal A\)</span>. Then clearly we have <span class="math inline">\(\mu^{+}\ll P_0\)</span>. It is easy to check that <span class="math inline">\(E(X^{+}|\cal A)= \frac{d\mu^{+}}{dP_0}\)</span> and <span class="math inline">\(E(X^{-}|\cal A)= \frac{d\mu^{-}}{dP_0}\)</span> (by similarly defining <span class="math inline">\(\mu^{-}\)</span>) will satisfy the definition of conditional expectation. The uniqueness and existence follows by RN theorem.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-30" class="example"><strong>Example 2.8  </strong></span>Suppose <span class="math inline">\(\Omega={1,2,3,4}\)</span> and <span class="math inline">\(P(\{k\})=\frac{1}{4}\)</span> for <span class="math inline">\(k\in\Omega\)</span>. Suppose that <span class="math inline">\(X(k)=k\)</span> for <span class="math inline">\(k\in\Omega\)</span>. Let <span class="math inline">\(Y(1)=4,\ Y(2)=5,\ Y(3)=Y(4)=6\)</span>. Find <span class="math inline">\(E(X|\sigma(Y))=h(Y)\)</span>.
+Directly by calculating that <span class="math inline">\(\int_A E(X|\cal A) \rm dP=\)</span> <span class="math inline">\(\int_{A} X dP\)</span>, we can derive that <span class="math inline">\(h(4)=1,\ h(5)=2,\ h(6)=\frac{7}{2}\)</span>.</p>
+</div>
+<p>If we consider trivial <span class="math inline">\(\sigma\)</span>-algebra <span class="math inline">\(\cal A=\{\phi,\ \Omega\}\)</span>, then by measurability we know that <span class="math inline">\(E(X|\cal A)\)</span> must be a constant function. By the integral restriction, clearly <span class="math inline">\(E(X|\cal A)=\rm E(X)\)</span>. Furthermore, suppose <span class="math inline">\(X\)</span> is measurable w.r.t <span class="math inline">\(\cal A_0\)</span> which is a sub <span class="math inline">\(\sigma\)</span>-field of <span class="math inline">\(\cal A\)</span>. Then <span class="math inline">\(E(X|\cal A)=\rm X\)</span>.</p>
+<p>Note that <span class="math inline">\(E(X|\sigma(Y))=E(Y)=h(Y)\)</span>. Thus we may write <span class="math inline">\(E(X|Y=y)=h(y)\)</span>. Below we give some proposition regarding to conditoinal expectation.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-31" class="proposition"><strong>Proposition 2.6  </strong></span>Given the same setup above, we have</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline">\(X=c\)</span> a.s. for <span class="math inline">\(c \in \mathbb{R}\)</span> then <span class="math inline">\(E(X|\cal A)=c\)</span> a.s. (measurability is trivial for a constant function).</li>
+<li>If <span class="math inline">\(X\leq Y\)</span> a.s., then <span class="math inline">\(E(X|\cal A)\leq \rm E(Y|\cal A)\)</span> a.s. (which can be quickly proved by linearity)</li>
+<li>For <span class="math inline">\(E|X|,\ E|Y|&lt; \infty\)</span>, <span class="math inline">\(E(aX+bY|\cal A)=a\rm E(X|\cal A)+b\rm E(Y|\cal A)\)</span>.</li>
+<li><span class="math inline">\(E(E(X|\cal A))= \int_{\Omega} \rm E(X|\cal A) \rm dP=\int_{\Omega} X dP=E(X)\)</span>.</li>
+<li>Let <span class="math inline">\(\cal A_0 \subset \cal A\)</span> be sub <span class="math inline">\(\sigma\)</span>-fields of some <span class="math inline">\(\cal F\)</span>. Then <span class="math inline">\(E(E(X|\cal A)|\cal A_0))=\rm E(\rm E(X|\cal A_0)|\cal A))=\rm E(X|\cal A_0)\)</span>.</li>
+<li>If <span class="math inline">\(\sigma(Y)\subset \cal A\)</span> and <span class="math inline">\(E(|XY|)&lt; \infty\)</span>, then <span class="math inline">\(E(XY|\cal A)=\rm YE(X|\cal A)\)</span>.</li>
+<li>Suppose <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, <span class="math inline">\(g\)</span> is Borel function and <span class="math inline">\(E|g(X,Y)|&lt;\infty\)</span>. Let <span class="math inline">\(h(y)=E(g(X,y))\)</span> for all <span class="math inline">\(y \in Y\)</span>. Then <span class="math inline">\(E(g(X,Y)|Y)=h(Y)\)</span>, or equivalently, <span class="math inline">\(E(g(X,Y)|Y=y)=h(y)\)</span>.</li>
+<li>If <span class="math inline">\(E(X^2)&lt; \infty\)</span>, then <span class="math inline">\([E(X|\cal A)]^2\leq \rm E(X^2|\cal A)\)</span> a.s.</li>
+</ol>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-32" class="remark"><em>Remark</em>. </span>We briefly discuss how to show some of the properties as following:</p>
+<ol style="list-style-type: decimal">
+<li><p>For 6. we start from considering <span class="math inline">\(Y\)</span> is a simple function and use LDCT on general measurable <span class="math inline">\(Y\)</span>.</p></li>
+<li><p>For 7. which consider the independence,</p></li>
+<li><p>For 8., we directly show that by <span class="math inline">\(0 \leq E[X-E(X|\cal A)^2|\cal A]=\rm E(X^2|\cal A)- \rm (E(X|\cal A))^2\)</span>. The equality follows by linearity and 6.</p></li>
+</ol>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-33" class="example"><strong>Example 2.9  </strong></span>This example shows that <span class="math inline">\(E(X|\cal A)\)</span> is the best guess of <span class="math inline">\(X\)</span> given some knowledge of <span class="math inline">\(\cal A\)</span>, which means <span class="math display">\[\int (X-E(X|\cal A))^2 \rm dP\leq \int (X-Y)^2 \rm dP\]</span> for any <span class="math inline">\(Y\)</span> measurable w.r.t. <span class="math inline">\(\cal A\)</span>. Let <span class="math inline">\(Z=Y-E(X|\cal A)\)</span> measurable w.r.t. <span class="math inline">\(\cal A\)</span>. It follows by that <span class="math inline">\(\int Z(X-E(X|\cal A)) \rm dP=E(E(Z(X-E(X|\cal A))|\cal A))=0\)</span>.</p>
+</div>
+</div>
+<div id="independence" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Independence<a href="conditional-expectation.html#independence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First we extend the definition of independence to <span class="math inline">\(\sigma\)</span>-algebra.</p>
+<div class="defintion">
+<p>Let <span class="math inline">\((\Omega,\cal F,P)\)</span> be a probability space.</p>
+<ol style="list-style-type: decimal">
+<li><p>Let <span class="math inline">\(\cal C\)</span> be a collection of subsets in <span class="math inline">\(\cal F\)</span>. Events in <span class="math inline">\(\cal C\)</span> is said to be independent if for any <span class="math inline">\(n \in \mathbb{N}\)</span> and distinct events <span class="math inline">\(A_1,\cdots,A_n\)</span> in <span class="math inline">\(\cal C\)</span>, we have <span class="math inline">\(P(A_1\cap\cdots A_n)=\prod_{i=1}^n P(A_i)\)</span>.</p></li>
+<li><p>Collections <span class="math inline">\(\cal C_i\subset \cal F,\, i\in I\)</span> are said to be independent if events in any collection of the form <span class="math inline">\(\{A_i\in\cal C_i:i\in I\}\)</span> are independent.</p></li>
+<li><p>Random elements <span class="math inline">\(X_i\)</span> are independent if <span class="math inline">\(\sigma(X_i)\)</span> are independent.</p></li>
+</ol>
+</div>
+<p>Suppose that <span class="math inline">\(X\)</span> is a random variable on <span class="math inline">\((\Omega,\cal F,P)\)</span> with finite moment and <span class="math inline">\(\cal A_1\)</span> and <span class="math inline">\(\cal A_2\)</span> are sub <span class="math inline">\(\sigma\)</span>-fields of <span class="math inline">\(\cal F\)</span>. If <span class="math inline">\(\sigma(\sigma(X)\cup\cal A_1)\)</span> and <span class="math inline">\(\cal A_2\)</span> are independent, then <span class="math display">\[E(X|\sigma(\cal A_1\cup \cal A_2))=\rm E(X|\cal A_1)\quad a.s.\]</span> In fact, it is sufficient to show that
+<span class="math display">\[\int_{\cal A_1\cap \cal A_1}E(X|\cal A_1)\rm dP= \int_{\cal A_1\cap \cal A_1}X dP.\]</span>
+for any <span class="math inline">\(A_1\in \cal A_1\)</span> and <span class="math inline">\(A_2\in \cal A_2\)</span> since <span class="math inline">\(\mathbb{C}=\rm \{A_1\cap A_2| A_1\in \cal A_1,A_2\in \cal A_2\}\)</span> is a <span class="math inline">\(\pi\)</span>-system and <span class="math inline">\(\sigma(\mathbb{C})=\sigma(\cal A_1\cup \cal A_2)\)</span>. This result can be further established by the fact that <span class="math inline">\(E(E(X|A_1) I_{A_2})=\rm E(X|A_1)P(A_2)\)</span> given the assumption.</p>
+<p>As a special case, <span class="math inline">\(E(X|Y_1,Y_2)=E(X|Y_1)\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\((Y_1,Y_2)\)</span> are independent by the result of the exercise below (by replacing <span class="math inline">\(\cal A_1\)</span>, <span class="math inline">\(\cal A_2\)</span> with <span class="math inline">\(\sigma(Y_1)\)</span> and <span class="math inline">\(\sigma(Y_1)\)</span>).</p>
+<p>Also, if <span class="math inline">\(E|X|&lt;\infty\)</span>, <span class="math inline">\(\sigma(X)\)</span> and <span class="math inline">\(\sigma(Y)\)</span> are independent, then <span class="math inline">\(E(X|Y)=E(X)\)</span> a.s.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-34" class="exercise"><strong>Exercise 2.1  </strong></span>Let <span class="math inline">\(Z=(Y_1,Y_2)\)</span>, <span class="math inline">\(\sigma(Z)\stackrel{?}=\sigma(\sigma(Y_1)\cup\sigma(Y_2))\)</span>.</p>
+<p>First we show that <span class="math display">\[\sigma(\sigma(Y_1)\cup\sigma(Y_2))=\sigma(\{Y_1^{-1}(B_1)\cap\sigma(Y_2^{-1}(B_2)):B_1\in \cal B^n, \rm B_2\in \cal B^m\}).\]</span> Then the result follows if <span class="math display">\[\sigma(Z)=\sigma(\{Y_1^{-1}(B_1)\cap\sigma(Y_2^{-1}(B_2)):B_1\in \cal B^n, \rm B_2\in \cal B^m\}).\]</span></p>
+<p>For the first equality, notice that <span class="math inline">\(\subseteq\)</span>-direction is clear since both <span class="math inline">\(\sigma(Y_1)\)</span> and <span class="math inline">\(\sigma(Y_2)\)</span> lie in the <span class="math inline">\(\sigma\)</span>-field on the right hand side. For another direction, note that for any <span class="math inline">\(B_1\)</span> and <span class="math inline">\(B_2\)</span>, <span class="math inline">\(Y_i^{-1}(B_i) \in \sigma(Y_1)\cup \sigma(Y_2),\, i=1,2\)</span>, thus the intersection must lie in the <span class="math inline">\(\sigma\)</span>-field on the left hand side.</p>
+<p>For second equality, the <span class="math inline">\(\supseteq\)</span>-direction is obvious since the set <span class="math inline">\(\mathbb{D}:=\{Y_1^{-1}(B_1)\cap\sigma(Y_2^{-1}(B_2)):B_1\in \cal B^n, \rm B_2\in \cal B^m\}\)</span> is just <span class="math inline">\(\{Z^{-1}(B_1\times B_2):B_1\in \cal B^n, \rm B_2\in \cal B^m\}\)</span>. For another direction, note that for <span class="math inline">\(\cal B^{n+m}=\sigma(\cal B^n\times \cal B^m)\)</span> and the fact that <span class="math inline">\(Z^{-1}(\sigma(\mathbb{D})) \subseteq \sigma(Z^{-1}(\mathbb{D}))\)</span> (in fact, they are equal). The fact can be shown by proving the set <span class="math inline">\(\cal E:=\{\rm A| Z^{-1}(A)\in \sigma(Z^{-1}(\mathbb{D}))\}\)</span> is a <span class="math inline">\(\sigma\)</span>-field including the collection <span class="math inline">\(\mathbb{D}\)</span>. Then the result follows from <span class="math inline">\(\sigma(\mathbb{D})\subseteq \cal E\)</span>.</p>
+</div>
+</div>
+<div id="conditional-distribution" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Conditional Distribution<a href="conditional-expectation.html#conditional-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First we define <span class="math inline">\(\mu(B,Y)=E(I_B(X)|Y)\)</span>. In other words, <span class="math inline">\(\int_{Y^{-1}(C)} \mu(B,Y)dP=\int_{Y^{-1}(C)} I_B(X)dP\)</span>. Furthermore, If <span class="math display">\[\int I_C(y)[\int_B f_{X|Y=y}(x) d\mu(x)]dP_Y(y)=P((X,Y)\in B\times C)\]</span> for <span class="math inline">\(B\in \cal B_X\)</span> and <span class="math inline">\(C \in \cal B_\rm{Y}\)</span>, then we say <span class="math inline">\(f_{X|Y=y}(x)\)</span> is the conditional density of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y=y\)</span> w.r.t <span class="math inline">\(\mu\)</span>. In fact, such function <span class="math inline">\(\mu(B,Y)\)</span> is called a <strong>random probability measure</strong>.</p>
+<p>Suppose <span class="math inline">\((X,Y)\)</span> has a joint density function <span class="math inline">\(f_{X\times Y}\)</span> w.r.t <span class="math inline">\(\mu \times \nu\)</span>. First of all, we show the result in basic probability that the conditional can be written as joint over marginal. Let <span class="math inline">\(f_{X|Y=y}(x)=\frac{f_{X\times Y}(x,y)}{f_Y(y)}\)</span>. The result can be validated by <span class="math display">\[\int I_C(y)(\int_B \frac{f_{X\times Y}(x,y)}{f_Y(y)}\, d\mu(x))dP_Y(y)=\int_{B\times C }f_{X\times Y}(x,y) d(\mu\times \nu)(x,y).\]</span> Secondly, we would like to show if <span class="math inline">\(E(X|Y=y)=\int xf_{X|Y=y}(x) d\mu(x)\)</span>. In other words, we may validate that <span class="math display">\[E[XI_C(y)]=\int I_C(y) [\int xf_{X|Y=y}(x) d\mu(x)] dP_Y(y),\]</span> by the defintion, which can be quickly proved by approximating <span class="math inline">\(X\)</span> with simple functions.</p>
+</div>
+<div id="markov-chain-and-martingale" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Markov chain and Martingale<a href="conditional-expectation.html#markov-chain-and-martingale" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
 </div>
             </section>
 
