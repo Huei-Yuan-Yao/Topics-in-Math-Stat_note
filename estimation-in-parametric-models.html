@@ -5,25 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Estimation in Parametric Models | Topics in Mathematical Statistics</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="description" content="This is my note of topics in mathematical statistics (under writing)." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Estimation in Parametric Models | Topics in Mathematical Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This is my note of topics in mathematical statistics (under writing)." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 4 Estimation in Parametric Models | Topics in Mathematical Statistics" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This is my note of topics in mathematical statistics (under writing)." />
   
 
 <meta name="author" content="Huei-Yuan Yao" />
 
 
-<meta name="date" content="2022-09-27" />
+<meta name="date" content="2022-12-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -80,8 +80,18 @@
 <li class="chapter" data-level="2.1.1" data-path="probability-spaces-and-random-elements.html"><a href="probability-spaces-and-random-elements.html#recap-measure-theory"><i class="fa fa-check"></i><b>2.1.1</b> Recap: Measure theory</a></li>
 <li class="chapter" data-level="2.1.2" data-path="probability-spaces-and-random-elements.html"><a href="probability-spaces-and-random-elements.html#measurable-functions"><i class="fa fa-check"></i><b>2.1.2</b> Measurable Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html"><i class="fa fa-check"></i><b>2.2</b> Integration and Differentiation</a></li>
-<li class="chapter" data-level="2.3" data-path="conditional-expectation.html"><a href="conditional-expectation.html"><i class="fa fa-check"></i><b>2.3</b> Conditional Expectation</a></li>
+<li class="chapter" data-level="2.2" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html"><i class="fa fa-check"></i><b>2.2</b> Integration and Differentiation</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html#lebesgue-integral"><i class="fa fa-check"></i><b>2.2.1</b> Lebesgue integral</a></li>
+<li class="chapter" data-level="2.2.2" data-path="integration-and-differentiation.html"><a href="integration-and-differentiation.html#radon-nikodym-derivative"><i class="fa fa-check"></i><b>2.2.2</b> Radon-Nikodym Derivative</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="conditional-expectation.html"><a href="conditional-expectation.html"><i class="fa fa-check"></i><b>2.3</b> Conditional Expectation</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="conditional-expectation.html"><a href="conditional-expectation.html#conditional-expectation-1"><i class="fa fa-check"></i><b>2.3.1</b> Conditional Expectation</a></li>
+<li class="chapter" data-level="2.3.2" data-path="conditional-expectation.html"><a href="conditional-expectation.html#independence"><i class="fa fa-check"></i><b>2.3.2</b> Independence</a></li>
+<li class="chapter" data-level="2.3.3" data-path="conditional-expectation.html"><a href="conditional-expectation.html#conditional-distribution"><i class="fa fa-check"></i><b>2.3.3</b> Conditional Distribution</a></li>
+<li class="chapter" data-level="2.3.4" data-path="conditional-expectation.html"><a href="conditional-expectation.html#markov-chain-and-martingale"><i class="fa fa-check"></i><b>2.3.4</b> Markov chain and Martingale</a></li>
+</ul></li>
 <li class="chapter" data-level="2.4" data-path="asymptotical-theory.html"><a href="asymptotical-theory.html"><i class="fa fa-check"></i><b>2.4</b> Asymptotical Theory</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="statistical-decision-theory.html"><a href="statistical-decision-theory.html"><i class="fa fa-check"></i><b>3</b> Statistical Decision Theory</a>
@@ -114,7 +124,6 @@
 <li class="chapter" data-level="4.2.2" data-path="method-of-maximum-likelihood.html"><a href="method-of-maximum-likelihood.html#quasi-likelihoods-and-conditional-likelihoods"><i class="fa fa-check"></i><b>4.2.2</b> Quasi-likelihoods and conditional likelihoods</a></li>
 <li class="chapter" data-level="4.2.3" data-path="method-of-maximum-likelihood.html"><a href="method-of-maximum-likelihood.html#asymptotic-efficiency"><i class="fa fa-check"></i><b>4.2.3</b> Asymptotic efficiency</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="math-example.html"><a href="math-example.html"><i class="fa fa-check"></i><b>4.3</b> math example</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="estimation-in-nonparametric-models.html"><a href="estimation-in-nonparametric-models.html"><i class="fa fa-check"></i><b>5</b> Estimation in Nonparametric Models</a>
 <ul>
@@ -214,20 +223,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

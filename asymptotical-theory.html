@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.4 Asymptotical Theory | Topics in Mathematical Statistics</title>
   <meta name="description" content="This is my note of topics in mathematical statistics (under writing)." />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.4 Asymptotical Theory | Topics in Mathematical Statistics" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Huei-Yuan Yao" />
 
 
-<meta name="date" content="2022-11-08" />
+<meta name="date" content="2023-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -90,9 +90,14 @@
 <li class="chapter" data-level="2.3.1" data-path="conditional-expectation.html"><a href="conditional-expectation.html#conditional-expectation-1"><i class="fa fa-check"></i><b>2.3.1</b> Conditional Expectation</a></li>
 <li class="chapter" data-level="2.3.2" data-path="conditional-expectation.html"><a href="conditional-expectation.html#independence"><i class="fa fa-check"></i><b>2.3.2</b> Independence</a></li>
 <li class="chapter" data-level="2.3.3" data-path="conditional-expectation.html"><a href="conditional-expectation.html#conditional-distribution"><i class="fa fa-check"></i><b>2.3.3</b> Conditional Distribution</a></li>
-<li class="chapter" data-level="2.3.4" data-path="conditional-expectation.html"><a href="conditional-expectation.html#markov-chain-and-martingale"><i class="fa fa-check"></i><b>2.3.4</b> Markov chain and Martingale</a></li>
+<li class="chapter" data-level="2.3.4" data-path="conditional-expectation.html"><a href="conditional-expectation.html#markov-chains-and-martingales"><i class="fa fa-check"></i><b>2.3.4</b> Markov chains and Martingales</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="asymptotical-theory.html"><a href="asymptotical-theory.html"><i class="fa fa-check"></i><b>2.4</b> Asymptotical Theory</a></li>
+<li class="chapter" data-level="2.4" data-path="asymptotical-theory.html"><a href="asymptotical-theory.html"><i class="fa fa-check"></i><b>2.4</b> Asymptotical Theory</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="asymptotical-theory.html"><a href="asymptotical-theory.html#convergence-modes"><i class="fa fa-check"></i><b>2.4.1</b> Convergence modes</a></li>
+<li class="chapter" data-level="2.4.2" data-path="asymptotical-theory.html"><a href="asymptotical-theory.html#law-of-large-numbers"><i class="fa fa-check"></i><b>2.4.2</b> Law of Large Numbers</a></li>
+<li class="chapter" data-level="2.4.3" data-path="asymptotical-theory.html"><a href="asymptotical-theory.html#central-limit-theorem"><i class="fa fa-check"></i><b>2.4.3</b> Central Limit Theorem</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="statistical-decision-theory.html"><a href="statistical-decision-theory.html"><i class="fa fa-check"></i><b>3</b> Statistical Decision Theory</a>
 <ul>
@@ -124,7 +129,6 @@
 <li class="chapter" data-level="4.2.2" data-path="method-of-maximum-likelihood.html"><a href="method-of-maximum-likelihood.html#quasi-likelihoods-and-conditional-likelihoods"><i class="fa fa-check"></i><b>4.2.2</b> Quasi-likelihoods and conditional likelihoods</a></li>
 <li class="chapter" data-level="4.2.3" data-path="method-of-maximum-likelihood.html"><a href="method-of-maximum-likelihood.html#asymptotic-efficiency"><i class="fa fa-check"></i><b>4.2.3</b> Asymptotic efficiency</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="math-example.html"><a href="math-example.html"><i class="fa fa-check"></i><b>4.3</b> math example</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="estimation-in-nonparametric-models.html"><a href="estimation-in-nonparametric-models.html"><i class="fa fa-check"></i><b>5</b> Estimation in Nonparametric Models</a>
 <ul>
@@ -163,7 +167,205 @@
             <section class="normal" id="section-">
 <div id="asymptotical-theory" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> Asymptotical Theory<a href="asymptotical-theory.html#asymptotical-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="convergence-modes" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Convergence modes<a href="asymptotical-theory.html#convergence-modes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In this chapter we shall recall four types of convergence at first. We may keep the notation as in undergraduate mathematical statistics.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-48" class="definition"><strong>Definition 2.12  </strong></span>Let <span class="math inline">\(X,X_1,X_2,\cdots\)</span> be random <span class="math inline">\(k\)</span>-vectors defined on a probability space.</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(X_n\stackrel{a.s.}\to X\)</span> if and only if <span class="math inline">\(X_n\to X\)</span> <span class="math inline">\(P\)</span>-a.e.</li>
+<li><span class="math inline">\(X_n\stackrel{p}\to X\)</span> if and only if for fixed <span class="math inline">\(\epsilon&gt;0\)</span>, <span class="math display">\[P(|X_n-X|&gt;\epsilon)\to 0.\]</span></li>
+<li><span class="math inline">\(X_n\stackrel{L^r}\to X\)</span> for <span class="math inline">\(r\geq 0\)</span> if and only if <span class="math display">\[E(||X_n-X||^r)\to 0.\]</span></li>
+<li><span class="math inline">\(X_n\stackrel{d}\to X\)</span> if and only if for each continuity point <span class="math inline">\(x\)</span> of c.d.f of <span class="math inline">\(X\)</span>, <span class="math inline">\(F\)</span> and <span class="math inline">\(X_n \sim F_n\)</span>, we have <span class="math display">\[F_n(x)\to F(x).\]</span></li>
+</ol>
+</div>
+<p>By Markov inequality, <span class="math inline">\(X_n\stackrel{L^r}\to X\)</span> implies <span class="math inline">\(X_n\stackrel{p}\to X\)</span>. Clearly, <span class="math inline">\(X_n\stackrel{a.s.}\to X\)</span> also implies <span class="math inline">\(X_n\stackrel{p}\to X\)</span>. Furthermore, we have <span class="math inline">\(X_n\stackrel{p}\to X\)</span> implies <span class="math inline">\(X_n\stackrel{d}\to X\)</span> and inverse holds if <span class="math inline">\(X\)</span> is a constant.</p>
+<p>We also recall the so called infinitely often (i.o.) refers to the limit supremum of the sets. In other words, an event <span class="math inline">\(A_n\)</span> happens i.o. if and only <span class="math inline">\(\cap_{k=1}^{\infty} \cup_{n=k}^{\infty} A_k\)</span> happens. Consider <span class="math inline">\(A_n=\{||X_n-X||&gt;\epsilon\}\)</span> for a given <span class="math inline">\(\epsilon&gt;0\)</span>.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-49" class="lemma"><strong>Lemma 2.2  </strong></span><span class="math inline">\(X_n\stackrel{a.s.}\to X\)</span> if and only if for every <span class="math inline">\(\epsilon&gt;0\)</span>,
+<span class="math display">\[P(\mbox{limsup}_n\{||X_n-X||&gt;\epsilon\})=0.\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-50" class="proof"><em>Proof</em>. </span>Clearly, for <span class="math inline">\(\omega \in \mbox{limsup}_n\{||X_n-X||&gt;\epsilon\}\)</span>, <span class="math inline">\(X_n(\omega) \nrightarrow X(\omega)\)</span>. Thus <span class="math inline">\(X_n\stackrel{a.s.}\to X\)</span> implies <span class="math inline">\(P(\mbox{limsup}_n\{||X_n-X||&gt;\epsilon\})=0.\)</span>. On the contrary, consider the set <span class="math display">\[A_j:=\cup_{n=1}^\infty\cap_{m=n}^\infty\{||X_m-X||\leq j^{-1}\}.\]</span> Then the result follows from <span class="math display">\[\cap_{j=1}^\infty A_j=\{\omega: \lim_{n\to\infty}X_n(\omega)=X(\omega)\}.\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-51" class="theorem"><strong>Theorem 2.8  (Borel Cantelli Lemma) </strong></span>Let <span class="math inline">\(A_n\)</span> be a sequence of events in probability space and follow the notation of limsup.</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline">\(\sum_n P(A_n)&lt;\infty\)</span>, then <span class="math inline">\(P(\mbox{limsup}_n A_n)=0\)</span></li>
+<li>If <span class="math inline">\(A_1,A_2,\cdots\)</span> are pairwise independent and <span class="math inline">\(\sum_n P(A_n)=\infty\)</span>, then <span class="math inline">\(P(\mbox{limsup}_n A_n)=1\)</span>.</li>
+</ol>
+</div>
+<p>The first B-C lemma are usually used in proving convergence almost surely. Below we start to consider the convergence with continuous function composite the random sequence.</p>
+<p>Clearly, if <span class="math inline">\(X_n\stackrel{a.s.}\to X\)</span> then we have <span class="math inline">\(f(X_n)\stackrel{a.s.}\to f(X)\)</span> for any continuous function <span class="math inline">\(f\)</span>. To show, for example, the case of convergence in distribution, we introduce the following theorem.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-52" class="theorem"><strong>Theorem 2.9  (Skorohod's Theorem) </strong></span>If <span class="math inline">\(X_n\stackrel{d}\to X\)</span> (in particular, <span class="math inline">\(X_n\)</span> and <span class="math inline">\(X\)</span> need not to be definied on the same space), then there are random vectors <span class="math inline">\(Y,Y_1,Y_2,\cdots\)</span> defined on a common probability space such that <span class="math inline">\(P_Y=P_X\)</span>, <span class="math inline">\(P_Y=P_X\)</span> for all <span class="math inline">\(n\)</span> and <span class="math inline">\(Y_n\stackrel{a.s.}\to X\)</span>.</p>
+</div>
+<p>With Skorohod’s theorem, it is easy to show that if <span class="math inline">\(X_n\stackrel{d}\to X\)</span>, then <span class="math inline">\(f(X_n)\stackrel{d}\to f(X)\)</span> as long as we consider the <span class="math inline">\(Y,Y_n\)</span>-copy on another probability space. These kinds of results are called ``continuous mapping theorem’’ which hold for convergence a.s., in distribution, and in probability.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-53" class="exercise"><strong>Exercise 2.3  </strong></span>Prove the continuous mapping theorem for the version of convergence in probability.</p>
+</div>
+<p>In the following, we define the notation of small-o and big-o in the sense of probability and almost surely.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-54" class="definition"><strong>Definition 2.13  </strong></span>Let <span class="math inline">\(X_1,X_2,\cdots\)</span> and <span class="math inline">\(Y_1,Y_2,\cdots\)</span> be random variables defined on a common probability space.</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(X_n=O(Y_n)\)</span> a.s. iff <span class="math inline">\(P(||X_n||=O(|Y_n|))=1\)</span></li>
+<li><span class="math inline">\(X_n=o(Y_n)\)</span> a.s. iff <span class="math inline">\(\frac{X_n}{Y_n}\to 0\)</span> a.s.</li>
+<li><span class="math inline">\(X_n=O_p(Y_n)\)</span> iff for any <span class="math inline">\(\epsilon &gt;0\)</span>, there is a constant <span class="math inline">\(C_{\epsilon}&gt;0\)</span> such that <span class="math inline">\(\mbox{sup}_n P(||X_n||\geq C_{\epsilon}|Y_n|)&lt; \epsilon\)</span>.</li>
+<li><span class="math inline">\(X_n=o_p(Y_n)\)</span> iff <span class="math inline">\(\frac{X_n}{Y_n}\to 0\)</span> in probability.</li>
+</ol>
+</div>
+<p>Obviously we can show that <span class="math inline">\(X_n=o_p(1)\)</span> implies that <span class="math inline">\(X_n=O_p(1)\)</span>. Some intuitive properties listed below is left for exercise.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-55" class="exercise"><strong>Exercise 2.4  </strong></span>Here we list some propositions of big-o and small-o, we may abuse the notation to be clear:</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline">\(X_n\stackrel{d}\to X\)</span>, then <span class="math inline">\(X_n=O_p(1)\)</span>.</li>
+<li><span class="math inline">\(o_p(1)+o_p(1)=o_p(1)\)</span>.</li>
+<li><span class="math inline">\(O_p(1)\times o_p(1)=o_p(1)\)</span>.</li>
+<li>It still holds if changing <span class="math inline">\(o_p(1)\)</span> with <span class="math inline">\(O_p(1)\)</span> in 2. and 3.</li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-56" class="theorem"><strong>Theorem 2.10  </strong></span>Let <span class="math inline">\(X,X_1,X_2,\cdots\)</span> be random vectors. Then the following conditions are equivalent to weak convergence (convergence in distribution):</p>
+<ol style="list-style-type: decimal">
+<li>(Levy-Cramer continuity theorem) For all <span class="math inline">\(t\in \mathbb{R}.\)</span>
+<span class="math display">\[\lim_{n\to \infty}E[e^{itX_n}]=E[e^{itX}].\]</span></li>
+<li><span class="math inline">\(E[h(X_n)]\to E[h(X)]\)</span> for every bounded continuous function <span class="math inline">\(h\)</span>.</li>
+<li>(Cramer-Wold device) For every real vector <span class="math inline">\(c\)</span>, <span class="math inline">\(c^TX_n \stackrel{d}\to c^TX\)</span>.</li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-57" class="theorem"><strong>Theorem 2.11  (Slutsky) </strong></span>If <span class="math inline">\(X_n \stackrel{d}\to X\)</span> and <span class="math inline">\(Y_n\stackrel{p}\to c\)</span>, then</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(X_n+Y_n\stackrel{d}\to X+c\)</span>.</li>
+<li><span class="math inline">\(X_nY_n\stackrel{d}\to cX\)</span>.</li>
+</ol>
+</div>
+<p>For the first case of Slutsky’s theorem, note that
+<span class="math display">\[P(X_n+Y_n\leq t)=P(X_n+c+Y_n-c\leq t, |Y_n-c|\leq \epsilon)+P(X_n+c+Y_n-c\leq t, |Y_n-c|\leq \epsilon).\]</span> Then if <span class="math inline">\(X\)</span>’s cdf <span class="math inline">\(F_X\)</span> is continuous at <span class="math inline">\(t-c+\epsilon\)</span> and <span class="math inline">\(t-c-\epsilon\)</span>. Since <span class="math display">\[F_X(t-c-\epsilon)\leq P(X_n+Y_n\leq t) \leq F_X(t-c+\epsilon),\]</span> the convergence follows by taking <span class="math inline">\(\epsilon \to 0\)</span>. (In particular, notice that <span class="math inline">\(F_X\)</span> is discontinuous at most countable points). An intermediate result of slutsky’s theorem (along with continuous mapping theorem and Cramer-Wold device) is that if <span class="math inline">\(X_n \stackrel{d}\to X\)</span> and <span class="math inline">\(Y_n\stackrel{p}\to c\)</span>, then we have <span class="math inline">\((X_n,Y_n) \stackrel{d}\to (X,Y).\)</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-58" class="theorem"><strong>Theorem 2.12  (Delta method) </strong></span>Let <span class="math inline">\(a_n&gt;0\)</span>, <span class="math inline">\(a_n\to \infty\)</span>, and <span class="math inline">\(a_n(X_n-\mu)\stackrel{d}\to Z\)</span> for some constant <span class="math inline">\(\mu\)</span> and random variable <span class="math inline">\(Z\)</span>. If <span class="math inline">\(g\)</span> is differentiable at <span class="math inline">\(\mu\)</span>, then
+<span class="math display">\[a_n(g(X_n)-g(\mu))\stackrel{d}\to g&#39;(\mu)Z.\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-59" class="proof"><em>Proof</em>. </span>By skorohod theorem, there exists <span class="math inline">\(Y\sim Z\)</span> and <span class="math inline">\(Y_n=\frac{U_n}{a_n}+\mu\)</span> which satisfies <span class="math inline">\(Y_n\sim X_n\)</span> and <span class="math inline">\(U_n=a_n(Y_n-\mu)\)</span>. Then by Taylor expansion and let <span class="math inline">\(\epsilon(x)=\frac{g(x)-g(\mu)-g&#39;(\mu)(x-\mu)}{x-\mu}\)</span> for <span class="math inline">\(x\neq0\)</span> and <span class="math inline">\(0\)</span> otherwise. Note that <span class="math inline">\(\lim_{x\to\mu}\epsilon(x)=0\)</span>. Finally, <span class="math display">\[a_n(g(Y_n)-g(\mu))=a_n(g&#39;(\mu)(Y_n-\mu)+\epsilon(Y_n)(Y_n-\mu)).\]</span> Then the result quickly follows.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-60" class="remark"><em>Remark</em>. </span>If we replace <span class="math inline">\(\mu\)</span> with a random variable <span class="math inline">\(X\)</span>, does the result of Delta method still hold? In other words, if <span class="math inline">\(a_n(X_n-X)\stackrel{d}\to Z\)</span>, is <span class="math inline">\(a_n(g(X_n)-g(X))\stackrel{d}\to g&#39;(X)Z\)</span>?</p>
+<p>False, for example, take <span class="math inline">\(X_n=X+n^{-1/2}(-1)^nZ\)</span> for <span class="math inline">\(Z\sim-Z\)</span>. Then
+<span class="math display">\[\sqrt{n}(X_n-X)\stackrel{d}\to Z\]</span> but <span class="math display">\[\sqrt{n}(X_n^2-X^2)\sim 2(-1)^nXZ,\]</span> which is not convergent if we consider <span class="math inline">\(X=Z\)</span>.</p>
+</div>
+</div>
+<div id="law-of-large-numbers" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Law of Large Numbers<a href="asymptotical-theory.html#law-of-large-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The law of large numbers, including weak law (WLLN) and strong law (SLLN), concerns the limiting behavior of sums of independent (not necessary identical) random variables. We will show the result of i.i.d. version and leave independent (without identical assumption) version to readers.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-61" class="theorem"><strong>Theorem 2.13  (WLLN) </strong></span>Let <span class="math inline">\(X_1,X_2,\cdots\)</span> be i.i.d. random variables. Then
+<span class="math display">\[\frac{1}{n}\sum_{i=1}^n X_i-a_n\stackrel{p}\to 0\]</span>
+if and only if <span class="math display">\[nP(|X_1|&gt;n)\to 0,\]</span> where <span class="math inline">\(a_n=E(X_1I_{\{|X_1|\leq n\}})\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-62" class="proof"><em>Proof</em>. </span>We only prove the sufficiency. Consider truncating <span class="math inline">\(X_i\)</span>’s, <span class="math inline">\(Y_{n,j}=X_jI_{\{|X_j|\leq n\}}\)</span>. Let <span class="math inline">\(T_n=\sum_{i=1}^nX_i\)</span> and <span class="math inline">\(Z_n=\sum_{i=1}^nY_{n,i}\)</span>. Note that <span class="math inline">\(a_n=\frac{EZ_n}{n}\)</span>Then
+<span class="math display">\[P(|\frac{T_n-EZ_n}{n}|)&gt;\epsilon)\leq P(|\frac{Z_n-EZ_n}{n}|)&gt;\epsilon)+P(T_n\neq Z_n).\]</span>
+The second term will tend to <span class="math inline">\(0\)</span> since
+<span class="math display">\[P(T_n\neq Z_n)\leq \sum_{i=1}^n P(Y_{n,i}\neq X_i)=nP(|X_1&gt;n|)\to 0.\]</span>
+By Chebyshev inequality, i.i.d. assumption, Cauchy inequality, we have <span class="math display">\[P(|\frac{Z_n-EZ_n}{n}|)&gt;\epsilon)\leq \frac{\mbox{E}(Y_{n,1}^2)}{\epsilon^2n}.\]</span>
+Then by the equality <span class="math inline">\(E(Y^p)=\int py^{p-1}P(Y&gt;y)dy\)</span> for random variable<span class="math inline">\(Y&gt;0\)</span> and change of variables, we can derive that <span class="math display">\[\frac{\mbox{E}(Y_{n,1}^2)}{n} \leq \frac{1}{n}\int_{0}^\infty 2yP(|Y_{n,1}|&gt;y)dy\leq c\int_{0}^n 2yP(|X_1|&gt;y)dy.\]</span> For the last term <span class="math inline">\(\int_{0}^n 2yP(|X_1|&gt;y)dy\)</span>, since <span class="math inline">\(g(y):=2yP(|X_1|&gt;y)\to 0\)</span>, there exists <span class="math inline">\(M=\sup g(y)&lt;\infty\)</span> and <span class="math inline">\(\epsilon_K=\sup\{g(y):y&gt;K\}\)</span>. Then <span class="math display">\[\frac{1}{n}\int_{0}^n 2yP(|X_1|&gt;y)dy\leq \frac{KM}{n}+\frac{(n-K)\epsilon_K}{n}.\]</span> Let <span class="math inline">\(n\to \infty\)</span>, then <span class="math display">\[\limsup_{n\to \infty}\frac{1}{n}\int_{0}^n 2yP(|X_1|&gt;y)dy\leq \epsilon_K.\]</span> The result follows since <span class="math inline">\(K\)</span> is arbitrary chosen and <span class="math inline">\(\epsilon_K\to 0\)</span> as <span class="math inline">\(K\to \infty\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-63" class="theorem"><strong>Theorem 2.14  (SLLN) </strong></span>Let <span class="math inline">\(X_1,X_2,\cdots\)</span> be i.i.d. random variables. Then
+<span class="math display">\[\frac{1}{n}\sum_{i=1}^n X_i \stackrel{a.s.}\to EX_1\]</span>
+if and only if <span class="math inline">\(E|X_1|&lt;\infty\)</span>.</p>
+</div>
+<p>Before proving the theorem, we may first discuss some related lemma which will be used in the proof. The first lemma is called Kronecker’s lemma.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-64" class="lemma"><strong>Lemma 2.3  (Kronecker's lemma) </strong></span>Let <span class="math inline">\(x_n\in \mathbb{R}\)</span>, <span class="math inline">\(a_n\in \mathbb{R}\)</span>, <span class="math inline">\(0&lt;a_n\leq a_{n+1}\)</span> for <span class="math inline">\(n \in \mathbb{N}\)</span> and <span class="math inline">\(a_n \to \infty\)</span>. If <span class="math inline">\(\sum_{n=1}^\infty x_n/a_n\)</span> converges, then <span class="math inline">\(\frac{1}{a_n}\sum_{i=1}^n x_i \to 0\)</span>.</p>
+</div>
+<p>The second lemma is a quite general inequality, due to Hajek and Renyi, we will give the proof of its special case which is known as <strong>Kolmogorov inequality</strong> and connect this result with <strong>Doob’s martingale inequality</strong> as a supplement for the last chapter.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-65" class="lemma"><strong>Lemma 2.4  (Hajek-Renyi) </strong></span>Let <span class="math inline">\(Y_1,\cdots, Y_n\)</span> be independent random variables with finite variances. Then
+<span class="math display">\[P(\max_{1\leq k\leq n}c_k|\sum_{i=1}^k (Y_i-(EY_i))|&gt;t )\leq \frac{1}{t^2}\sum_{i=1}^n c_i^2\mbox{Var}(Y_i),\]</span>
+for any <span class="math inline">\(t&gt;0\)</span> and <span class="math inline">\(c_1\geq c_2 \geq \cdots\geq c_n &gt;0\)</span>. If <span class="math inline">\(c_i=1\)</span> for all <span class="math inline">\(i\)</span>, the inequality reduces to “Kolmogorov inequality”.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-66" class="proof"><em>Proof</em> (special case (Kolmogorov inequality)). </span></p>
+Let <span class="math inline">\(\sum_{i=1}^nY_i-E(Y_i)=S_n\)</span> for <span class="math inline">\(n\in \mathbb{N}\)</span>. Then by Example 2.14, we have known that <span class="math inline">\(S_1,S_2,\cdots, S_n\)</span> forms a martingale. Let <span class="math inline">\(Z_0=0\)</span> and <span class="math inline">\(Z_{i+1}\)</span> be <span class="math inline">\(S_{i+1}\)</span> if <span class="math inline">\(\max_{j\leq i}|S_j|&lt; t\)</span>, <span class="math inline">\(Z_i\)</span> otherwise. Then <span class="math inline">\(\{Z_i\}\)</span> is a martingale. To see this, note that <span class="math inline">\(Z_{i}=S_i\)</span> for all <span class="math inline">\(i\)</span> if <span class="math inline">\(\max_{j\in\mathbb{N}}|S_j|&lt; t\)</span>, otherwise we can find a positive integer <span class="math inline">\(K\)</span> such that <span class="math inline">\(\max_{j\leq K}|S_j|&lt; t\)</span> and <span class="math inline">\(\max_{j\leq K+1}|S_j|=|S_{K+1}|\geq t\)</span> which implies <span class="math inline">\(Z_i=S_i\)</span> for all <span class="math inline">\(i\leq K+1\)</span> and <span class="math inline">\(Z_{i+1}=Z_{i}=S_{K+1}\)</span> for all <span class="math inline">\(i\geq K+1\)</span>. In both cases <span class="math inline">\(\{Z_i\}\)</span> is a martingale. Furthermore,
+<span class="math display">\[\begin{split}
+P(\max_{1\leq i\leq n} |S_i|\geq t) &amp;=P(|Z_n|\geq n)\\ &amp;\leq \frac{1}{\lambda^2}E(Z_n^2)\\ &amp;=\frac{1}{\lambda^2}\sum_{i=1}^n E[(Z_i-Z_{i-1})^2]\\ &amp;\leq \frac{1}{\lambda^2}\sum_{i=1}^n E[(S_i-S_{i-1})^2]=\frac{1}{\lambda^2}E(S_n^2)=\frac{1}{\lambda^2}\mbox{Var}(S_n)
+\end{split}\]</span>
+<p>The first equality can be seen from the argument above. The second inequality is Chebyshev inequality. The left ones are based on the result that for any martingale <span class="math inline">\(\{M_n\}\)</span> with <span class="math inline">\(M_0=0\)</span>, we have <span class="math display">\[\sum_{i=1}^n E[(M_i-M_{i-1})^2]=E(M_n^2),\]</span> which holds since in particular <span class="math display">\[E(M_{i-1}(M_i-M_{i-1}))=0\]</span> for all <span class="math inline">\(i\geq 1\)</span>.</p>
+</div>
+<p>Another extension of Kolmogorov inequality is related to the proof based on the martingales. Further discussions and its proof can be referred to Section 35 in Bilingsley (2008).</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-67" class="proposition"><strong>Proposition 2.8  (Doob's martingale inequality) </strong></span>If <span class="math inline">\(X_1,\cdots,X_n\)</span> is a submartingale, then for <span class="math inline">\(\alpha&gt;0\)</span>,
+<span class="math display">\[P(\max_{1\leq i\leq n}X_i\geq \alpha)\leq \frac{1}{\alpha}E(|X_n|).\]</span></p>
+</div>
+<p>Let <span class="math inline">\(X_i=S_i^2\)</span> be the partial sum of independent random variables with mean <span class="math inline">\(0\)</span> and finite variances, which forms a submartingale by Theorem 2.5, then the result is exactly the Kolmogorov inequality.</p>
+<div class="proof">
+<p><span id="unlabeled-div-68" class="proof"><em>Proof</em> (SLLN). </span></p>
+We only show the sufficiency here. Let <span class="math inline">\(Y_n=X_nI_{\{|X_n|\leq n\}}\)</span>, <span class="math inline">\(n=1,2,\cdots\)</span>. To show the result, we consider the following decomposition:
+<span class="math display">\[\begin{split}
+\frac{1}{n}\sum_{i=1}^n X_i-EX_1&amp;=(\frac{1}{n}\sum_{i=1}^n X_i-\frac{1}{n}\sum_{i=1}^n Y_i)\\ &amp;+\frac{1}{n}\sum_{i=1}^n (Y_i-EY_i)+\frac{1}{n}\sum_{i=1}^n (EY_i-EX_1).
+\end{split}\]</span>
+<p>Since <span class="math inline">\(EY_n\to EX_1\)</span> by LDCT, It can be seen that the third term <span class="math inline">\(\frac{1}{n}\sum_{i=1}^n (EY_i-EX_1) \to 0\)</span> (just separate the sum by finite terms and tail sum). For the first term, by integral test and <span class="math inline">\(E|X_1|=\int P(|X_1|&gt;x)dx &lt;\infty\)</span> we have
+<span class="math display">\[\sum_{n=1}^\infty P(X_n\neq Y_n)=\sum_{n=1}^\infty P(|X_n|&gt;n)=\sum_{n=1}^\infty P(|X_n|&gt;n)&lt;\infty.\]</span> Then by Borel-Cantelli first lemma, we have <span class="math inline">\(P(\{X_m\neq Y_m\, ,i.o.\})=0\)</span>. Hence for sufficiently large <span class="math inline">\(n\)</span> we have <span class="math inline">\(X_n=Y_n\)</span> with probability <span class="math inline">\(1\)</span>. Thus <span class="math display">\[\frac{1}{n}\sum_{i=1}^n X_i-\frac{1}{n}\sum_{i=1}^n Y_i \to 0 \quad a.s.\]</span> (similarly by separating the sum into finite sum and tail sum.) Thereore, it remains to show the second term <span class="math inline">\(\frac{1}{n}\sum_{i=1}^n (Y_i-EY_i) \to 0\)</span> a.s.. To show this, we define <span class="math inline">\(Z_1=\cdots=Z_{m-1}=0\)</span>, <span class="math inline">\(Z_m=Y_1+\cdots+Y_m\)</span>, and <span class="math inline">\(Z_i=Y_i\)</span> for <span class="math inline">\(i\geq m+1\)</span> and <span class="math inline">\(c_i=\frac{1}{i}\)</span> for <span class="math inline">\(i\geq m\)</span> in Hajek-Renyi inequality. Then we can derive that <span class="math display">\[P(\max_{m\leq l\leq n}|\xi_l|&gt;\epsilon)\leq \frac{1}{\epsilon^2m^2} \sum_{i=1}^m \mbox{Var}(Y_i)+\frac{1}{\epsilon^2}\sum_{i=m+1}^n \frac{\mbox{Var}(Y_i)}{i^2},\]</span>
+where <span class="math inline">\(\xi_n=n^{-1}\sum_{i=1}^n (Z_i-EZ_i)=n^{-1}\sum_{i=1}^n (Y_i-EY_i)\)</span> for <span class="math inline">\(n\geq m\)</span>. Note that</p>
+<span class="math display">\[\begin{split}
+\sum_{n=1}^\infty \frac{EY_n^2}{n^2}&amp;=\sum_{n=1}^\infty \sum_{j=1}^n \frac{E(X_1^2 I_{\{j-1&lt;|X_1|\leq j\}})}{n^2}\\ &amp;\leq \sum_{j=1}^\infty \sum_{n=j}^\infty  j\frac{E(|X_1| I_{\{j-1&lt;|X_1|\leq j\}})}{n^2}&lt;\infty,
 
+\end{split}\]</span>
+where the last inequality holds since <span class="math inline">\(\sum_n \frac{j}{n^2}&lt;\infty\)</span>. It suffices to show that <span class="math inline">\(\xi_n=n^{-1}\sum_{i=1}^n (Y_i-EY_i) \to 0\)</span> a.s.. To see this, by lemma 2.2, we only need to show that <span class="math inline">\(P(\limsup_n \{|\xi_n|&gt;\epsilon\})=0\)</span>. This follows from
+<span class="math display">\[\begin{split}
+P(\limsup_n \{|\xi_n|&gt;\epsilon\})&amp;=\lim_{n\to \infty} P(\cup_{l=n}^\infty \{|\xi_l|&gt;\epsilon\} )\\
+&amp;=\lim_{n\to \infty}\lim_{k\to\infty} P(\max_{n\leq l \leq k}|\xi_l|&gt;\epsilon)\\
+&amp;\leq \lim_{n\to \infty} \frac{1}{\epsilon^2 n^2}\sum_{i=1}^n \mbox{Var}(Y_i)+\frac{1}{\epsilon^2} \sum_{i=n+1}^\infty \frac{\mbox{Var}(Y_i)}{i^2}=0.
+
+\end{split}\]</span>
+<p>The last equality follows by Kronecker’s lemma and <span class="math inline">\(\sum_{n=1}^\infty \frac{EY_n^2}{n^2}&lt;\infty\)</span>.</p>
+</div>
+</div>
+<div id="central-limit-theorem" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Central Limit Theorem<a href="asymptotical-theory.html#central-limit-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consider <span class="math inline">\(\{X_{n,j},j=1,\cdots,k_n\}\)</span> be independent random variables with <span class="math inline">\(0&lt;\sigma_n^2=\mbox{Var}(\sum_{j=1}^{k_n}X_{n,j})&lt;\infty\)</span> <span class="math inline">\(n=1,2,\cdots\)</span> for <span class="math inline">\(k_n\to \infty\)</span>
+as <span class="math inline">\(n\to \infty\)</span>. Here we discuss some different conditions such that the following result holds. <span class="math display">\[\frac{1}{\sigma_n} \sum_{j=1}^{k_n} (X_{n,j}-E(X_{n,j})) \stackrel{d}\to N(0.1).\]</span>
+The first condition is called <strong>Linderberg condition</strong>, which assumes that
+<span class="math display">\[\sum_{j=1}^{k_n} E[(X_{n,j}-E(X_{n,j}))^2I_{\{|X_{n,j}-E(X_{n,j})|&gt;\epsilon\sigma_n\}}]=o(\sigma_n^2) \]</span> for any <span class="math inline">\(\epsilon&gt;0\)</span>. The second one is <strong>Lyapunov’s condition</strong>:
+<span class="math display">\[\sum_{j=1}^{k_n} E|X_{n,j}-EX_{n,j}|^{2+\delta}=o(\sigma_n^{2+\delta}),\]</span> which is more common and will imply Linderberg’s condition. The last one is implied by Linderberg’s conditon, which is called <strong>Feller’s condition</strong>:
+<span class="math display">\[\lim_{n\to \infty} \frac{\max_{j\leq k_n}\sigma_{n,j}^2}{\sigma_n^2}=0,  \]</span>
+where <span class="math inline">\(\sigma_{n,j}^2=\mbox{Var}(X_n,j)\)</span>.</p>
+<p>In summary, we have the following:
+<span class="math display">\[\mbox{Lyapunov&#39;s condition}\Rightarrow \mbox{Linderberg&#39;s condition}\Rightarrow \mbox{Feller&#39;s condition}.\]</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-69" class="exercise"><strong>Exercise 2.5  </strong></span>Show the result about the implication of the conditions for CLT above.</p>
+<p>(<span class="math inline">\(\mbox{Lyapunov&#39;s condition}\Rightarrow \mbox{Linderberg&#39;s condition}\)</span>)</p>
+<p>(<span class="math inline">\(\mbox{Linderberg&#39;s condition}\Rightarrow \mbox{Feller&#39;s condition}\)</span>)
+It is clear since
+<span class="math display">\[\frac{\max_{j\leq k_n} \mbox{Var}(Y_{n,j})}{\sigma_n^2}\leq \frac{1}{\sigma_n^2}(\sum_{j=1}^{k_n}E(Y_{n,j}^2))I_{\{|X_{n,j}-E(X_{n,j})|&gt;\epsilon\sigma_n\}}+\epsilon^2\sigma_n^2),\]</span>
+thus the result follows by the Linderberg’s condition.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-70" class="example"><strong>Example 2.15  (density estimation) </strong></span><span class="math inline">\(X_1,X_2,\cdots\)</span> be IID with Lebesgue PDF <span class="math inline">\(f\)</span>. Consider <span class="math display">\[\hat{f}(x_0)=\frac{1}{nh}\sum_{i=1}^n k(\frac{x_0-x_i}{h}),\]</span> where <span class="math inline">\(0&lt;h=h_n\to 0\)</span> and
+<span class="math inline">\(k\)</span> is kernel function which satisfies (i) <span class="math inline">\(k\geq 0\)</span>, (ii)<span class="math inline">\(\int k(u) du=1\)</span>, (iii)<span class="math inline">\(\int u k(u) du=0\)</span> (iv) <span class="math inline">\(\int u^2 k(u) du&lt;\infty\)</span>. Determine the conditions such that we have
+<span class="math display">\[\frac{nh_n(\hat{f}(x_0)-f(x_0))}{\sqrt{\mbox{Var}(nh_n\hat{f}(x_0))}} \stackrel{d} \to N(0,1). \]</span>
+By Lyapunov’s condition, we may require that
+<span class="math display">\[\frac{\sum_i E|k(\frac{x_0-X_i}{h})-E(k(\frac{x_0-X_i}{h}))|^{2+\delta}}{\sqrt{\mbox{Var}(\sum_i k(\frac{x_0-X_i}{h}))}^{2+\delta}} \to 0.  \]</span>
+Let <span class="math inline">\(g=k,k^2\)</span>,
+<span class="math display">\[E(g(\frac{x_0-X_i}{h}))=\int_{-\infty}^{\infty} g(\frac{x_0-x}{h})f(x)dx=\int_{-\infty}^{\infty} g(u)f(x_0-hu)hdu.\]</span>
+By LDCT, <span class="math display">\[E(k^2(\frac{x_0-X_i}{h}))=h_n(f(x_0)\int_{-\infty}^{\infty}k^2(u)du+o(1)),\]</span> and <span class="math display">\[E(k(\frac{x_0-X_i}{h}))=h_n(f(x_0)+o(1)).\]</span></p>
+<p>Then by considering <span class="math inline">\(\delta=2\)</span> for Lyapunov’s condition and
+<span class="math display">\[  \sum_i E|k(\frac{x_0-X_i}{h})-E(k(\frac{x_0-X_i}{h}))|^{4}\leq Cnh_n(1+o(1)),\]</span>
+for some constant <span class="math inline">\(C\)</span>. Then the Lyapunov’s condition can therefore be verified by <span class="math inline">\(nh_n\to \infty\)</span>.</p>
+</div>
+<p>We may wonder that at what circumstances we will encounter the general type of CLT, which admits two indices (<span class="math inline">\(n,j\)</span>). Below we illustrate an example.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-71" class="example"><strong>Example 2.16  </strong></span>Consider the model <span class="math inline">\(Y=f(X)+\epsilon\)</span> and <span class="math inline">\(X\in[0,1]\)</span>. If we sample “<span class="math inline">\(X\)</span>” as to be
+<span class="math inline">\(\{X_{n,1},\cdots,X_{n,k_n}\}=\{\frac{1}{k_n+1},\cdots,\frac{k_n}{k_n+1}\}\)</span> and <span class="math inline">\(Y_{n,j}=f(X_{n,j})+\epsilon_{n,j}\)</span>, where <span class="math inline">\(\epsilon_{n,j}\stackrel{IID}\sim N(0,\sigma^2)\)</span>. If we consider <span class="math display">\[\hat{f}(x_0)=\frac{\sum_{j=1}^{k_n}Y_{n,j}k(\frac{x_0-X_{n,j}}{h})}{k(\frac{x_0-X_{n,j}}{h})}.\]</span> Then the form <span class="math display">\[\hat{f}(x_0)-\frac{\sum_{j=1}^{k_n}f(X_{n,j})k(\frac{x_0-X_{n,j}}{h})}{k(\frac{x_0-X_{n,j}}{h})}=\frac{\sum_{j=1}^{k_n}\epsilon_{n,j}k(\frac{x_0-X_{n,j}}{h})}{k(\frac{x_0-X_{n,j}}{h})}\]</span> involves the sum of random variables with two indices.</p>
+<p>In proving Linderberg’s CLT, we consider the characteristic function of <span class="math inline">\(\frac{1}{\sigma_n} \sum_{j=1}^{k_n} (X_{n,j}-E(X_{n,j}))\)</span>, the inequality
+<span class="math display">\[|\prod_{k=1}^m Ea_k-\prod_{k=1}^m Eb_k|\leq\sum_{j=1}^m E|a_k-b_k|,\]</span>
+and <span class="math display">\[Ee^{itX_{n,j}}-(1-t^2\sigma_{n,j}^2/2)\leq E(\min\{|tX_{n,j}|^2,|tX_{n,j}|^3\}).\]</span>
+Combining the two inequalities and the approximation of c.h.f, we may separate and control the two parts <span class="math inline">\(I_{\{|X_{n,j}-E(X_{n,j})|&gt;\epsilon\}}\)</span> and <span class="math inline">\(I_{\{|X_{n,j}-E(X_{n,j})| \leq\epsilon\}}\)</span>. The result (for the squared term) will naturally follow by the Linderberg’s condition.</p>
+</div>
+
+</div>
 </div>
 <!-- </div> -->
             </section>
